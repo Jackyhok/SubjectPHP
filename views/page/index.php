@@ -1,6 +1,7 @@
   <!--======= HOME MAIN SLIDER =========-->
   <?php
     include_once('../partials/header.php');
+	  include_once('../../database/db.class.php');
   ?>
   <section class="home-slider"> 
     <!-- SLIDE Start -->
@@ -8,80 +9,16 @@
       <div class="tp-banner">
         <ul>
           <!-- SLIDE  -->
-          <li data-transition="random" data-slotamount="7" data-masterspeed="300"  data-saveperformance="off" > 
-            <!-- MAIN IMAGE --> 
-            <img src="../../public/images/slide-bg-1.jpg"  alt="slider"  data-bgposition="center center" data-bgfit="cover" data-bgrepeat="no-repeat"> 
-            <!-- LAYERS --> 
-            <!-- LAYER NR. 1 -->
-            <div class="tp-caption font-playfair sfb tp-resizeme" 
-                data-x="left" data-hoffset="0" 
-                data-y="center" data-voffset="-200" 
-                data-speed="800" 
-                data-start="500" 
-                data-easing="Power3.easeInOut" 
-                data-splitin="none" 
-                data-splitout="none" 
-                data-elementdelay="0.1" 
-                data-endelementdelay="0.1" 
-                data-endspeed="300" 
-                style="z-index: 7; font-size:18px; color:#fff; max-width: auto; max-height: auto; white-space: nowrap;">The Latest Product from PAVSHOP</div>
-            <!-- LAYER NR. 2 -->
-            <div class="tp-caption sfl font-extra-bold tp-resizeme" 
-                data-x="left" data-hoffset="0" 
-                data-y="center" data-voffset="-120" 
-                data-speed="800" 
-                data-start="800" 
-                data-easing="Power3.easeInOut" 
-                data-splitin="none" 
-                data-splitout="none" 
-                data-elementdelay="0.07" 
-                data-endelementdelay="0.1" 
-                data-endspeed="300" 
-                style="z-index: 6; font-size:80px; color:#2d3a4b; text-transform:uppercase; white-space: nowrap;"><small class="font-regular">$</small>299 </div>
-            <!-- LAYER NR. 2 -->
-            <div class="tp-caption sfr font-extra-bold tp-resizeme" 
-                data-x="left" data-hoffset="0" 
-                data-y="center" data-voffset="0" 
-                data-speed="800" 
-                data-start="800" 
-                data-easing="Power3.easeInOut" 
-                data-splitin="chars" 
-                data-splitout="none" 
-                data-elementdelay="0.07" 
-                data-endelementdelay="0.1" 
-                data-endspeed="300" 
-                style="z-index: 6; font-size:120px; color:#fff; text-transform:uppercase; white-space: nowrap;">featured </div>
-            <!-- LAYER NR. 2 -->
-            <div class="tp-caption sfr font-extra-bold tp-resizeme" 
-                data-x="left" data-hoffset="0" 
-                data-y="center" data-voffset="110" 
-                data-speed="800" 
-                data-start="1300" 
-                data-easing="Power3.easeInOut" 
-                data-splitin="chars" 
-                data-splitout="none" 
-                data-elementdelay="0.07" 
-                data-endelementdelay="0.1" 
-                data-endspeed="300" 
-                style="z-index: 6; font-size:120px; color:#fff; text-transform:uppercase; white-space: nowrap;">cycle </div>
-            <!-- LAYER NR. 4 -->
-            <div class="tp-caption lfb tp-resizeme" 
-                data-x="left" data-hoffset="0" 
-                data-y="center" data-voffset="240" 
-                data-speed="800" 
-                data-start="2200" 
-                data-easing="Power3.easeInOut" 
-                data-elementdelay="0.1" 
-                data-endelementdelay="0.1" 
-                data-endspeed="300" 
-                data-scrolloffset="0"
-                style="z-index: 8;"><a href="#." class="btn">SHOP NOW</a> </div>
-          </li>
+          
           
           <!-- SLIDE  -->
+          <?php
+            $sql_slider = mysqli_query($con,"SELECT * FROM tbl_slider WHERE slider_active='1' ORDER BY slider_id");
+            while($row_slider = mysqli_fetch_array($sql_slider)){ 
+          ?>
           <li data-transition="random" data-slotamount="7" data-masterspeed="300"  data-saveperformance="off" > 
             <!-- MAIN IMAGE --> 
-            <img src="../../public/images/slide-bg-2.jpg"  alt="slider"  data-bgposition="center center" data-bgfit="cover" data-bgrepeat="no-repeat"> 
+            <img src="../../img/<?php echo $row_slider['slider_image'] ?>"  alt="slider"  data-bgposition="center center" data-bgfit="cover" data-bgrepeat="no-repeat"> 
             <!-- LAYERS --> 
             <!-- LAYER NR. 1 -->
             <div class="tp-caption font-playfair sfb tp-resizeme" 
@@ -148,6 +85,9 @@
                 data-scrolloffset="0"
                 style="z-index: 8;"><a href="#." class="btn">BUY NOW</a> </div>
           </li>
+          <?php
+            } 
+          ?>
         </ul>
       </div>
     </div>
@@ -169,134 +109,31 @@
       
       <!-- New Arrival -->
       <div class="arrival-block"> 
-        
+      <?php
+        $sql_product = mysqli_query($con,"SELECT * FROM tbl_sanpham ORDER BY sanpham_id DESC LIMIT 10");
+        while($row_sanpham = mysqli_fetch_array($sql_product)){ 
+          
+      ?>
         <!-- Item -->
         <div class="item"> 
           <!-- Images --> 
-          <img class="img-1" src="../../public/images/item-img-1-1.jpg" alt=""> <img class="img-2" src="../../public/images/item-img-1-1-1.jpg" alt=""> 
+          <img class="img-1" src="../../img/<?php echo $row_sanpham['sanpham_image'] ?>" alt=""> <img class="img-2" src="../../public/images/item-img-1-1-1.jpg" alt=""> 
           <!-- Overlay  -->
           <div class="overlay"> 
             <!-- Price --> 
-            <span class="price"><small>$</small>299</span>
+            <span class="price"><?php echo $row_sanpham['sanpham_gia'] ?><small>VND</small></span>
             <div class="position-center-center"> <a href="../../public/images/item-img-1-1.jpg" data-lighter><i class="icon-magnifier"></i></a> </div>
           </div>
           <!-- Item Name -->
-          <div class="item-name"> <a href="#.">wooden chair</a>
-            <p>Lorem ipsum dolor sit amet</p>
+          <div class="item-name"> <a href="#."><?php echo $row_sanpham['sanpham_name'] ?></a>
+            <p><?php echo $row_sanpham['sanpham_mota'] ?></p>
           </div>
         </div>
-        
+      <?php
+        } 
+      ?>
         <!-- Item -->
-        <div class="item"> 
-          <!-- Images --> 
-          <img class="img-1" src="../../public/images/item-img-1-2.jpg" alt=""> <img class="img-2" src="../../public/images/item-img-1-1-1.jpg" alt=""> 
-          <!-- Overlay  -->
-          <div class="overlay"> 
-            <!-- Price --> 
-            <span class="price"><small>$</small>299</span>
-            <div class="position-center-center"> <a href="../../public/images/item-img-1-2.jpg" data-lighter><i class="icon-magnifier"></i></a> </div>
-          </div>
-          <!-- Item Name -->
-          <div class="item-name"> <a href="#.">MINIMALIST WOO TOYS</a>
-            <p>Lorem ipsum dolor sit amet</p>
-          </div>
-        </div>
         
-        <!-- Item -->
-        <div class="item"> 
-          <!-- Images --> 
-          <img class="img-1" src="../../public/images/item-img-1-3.jpg" alt=""> <img class="img-2" src="../../public/images/item-img-1-1-1.jpg" alt=""> 
-          <!-- Overlay  -->
-          <div class="overlay"> 
-            <!-- Price --> 
-            <span class="price"><small>$</small>299</span>
-            <div class="position-center-center"> <a href="../../public/images/item-img-1-3.jpg" data-lighter><i class="icon-magnifier"></i></a> </div>
-          </div>
-          <!-- Item Name -->
-          <div class="item-name"> <a href="#.">Concrete Shaving Kit</a>
-            <p>Lorem ipsum dolor sit amet</p>
-          </div>
-        </div>
-        
-        <!-- Item -->
-        <div class="item"> 
-          <!-- Images --> 
-          <img class="img-1" src="../../public/images/item-img-1-4.jpg" alt=""> <img class="img-2" src="../../public/images/item-img-1-1-1.jpg" alt=""> 
-          <!-- Overlay  -->
-          <div class="overlay"> 
-            <!-- Price --> 
-            <span class="price"><small>$</small>299</span>
-            <div class="position-center-center"> <a href="images/item-img-1-4.jpg" data-lighter><i class="icon-magnifier"></i></a> </div>
-          </div>
-          <!-- Item Name -->
-          <div class="item-name"> <a href="#.">PARAGON PENDANT</a>
-            <p>Lorem ipsum dolor sit amet</p>
-          </div>
-        </div>
-        
-        <!-- Item -->
-        <div class="item"> 
-          <!-- Images --> 
-          <img class="img-1" src="../../public/images/item-img-1-5.jpg" alt=""> <img class="img-2" src="../../public/images/item-img-1-1-1.jpg" alt=""> 
-          <!-- Overlay  -->
-          <div class="overlay"> 
-            <!-- Price --> 
-            <span class="price"><small>$</small>299</span>
-            <div class="position-center-center"> <a href="../../public/images/item-img-1-5.jpg" data-lighter><i class="icon-magnifier"></i></a> </div>
-          </div>
-          <!-- Item Name -->
-          <div class="item-name"> <a href="#.">crative lamp</a>
-            <p>Lorem ipsum dolor sit amet</p>
-          </div>
-        </div>
-        
-        <!-- Item -->
-        <div class="item"> 
-          <!-- Images --> 
-          <img class="img-1" src="../../public/images/item-img-1-6.jpg" alt=""> <img class="img-2" src="../../public/images/item-img-1-1-1.jpg" alt=""> 
-          <!-- Overlay  -->
-          <div class="overlay"> 
-            <!-- Price --> 
-            <span class="price"><small>$</small>299</span>
-            <div class="position-center-center"> <a href="../../public/images/item-img-1-6.jpg" data-lighter><i class="icon-magnifier"></i></a> </div>
-          </div>
-          <!-- Item Name -->
-          <div class="item-name"> <a href="#.">ECO FRIENDLY</a>
-            <p>Lorem ipsum dolor sit amet</p>
-          </div>
-        </div>
-        
-        <!-- Item -->
-        <div class="item"> 
-          <!-- Images --> 
-          <img class="img-1" src="../../public/images/item-img-1-7.jpg" alt=""> <img class="img-2" src="../../public/images/item-img-1-1-1.jpg" alt=""> 
-          <!-- Overlay  -->
-          <div class="overlay"> 
-            <!-- Price --> 
-            <span class="price"><small>$</small>299</span>
-            <div class="position-center-center"> <a href="../../public/images/item-img-1-7.jpg" data-lighter><i class="icon-magnifier"></i></a> </div>
-          </div>
-          <!-- Item Name -->
-          <div class="item-name"> <a href="#.">GEOMETRY STOOL</a>
-            <p>Lorem ipsum dolor sit amet</p>
-          </div>
-        </div>
-        
-        <!-- Item -->
-        <div class="item"> 
-          <!-- Images --> 
-          <img class="img-1" src="../../public/images/item-img-1-8.jpg" alt=""> <img class="img-2" src="../../public/images/item-img-1-1-1.jpg" alt=""> 
-          <!-- Overlay  -->
-          <div class="overlay"> 
-            <!-- Price --> 
-            <span class="price"><small>$</small>299</span>
-            <div class="position-center-center"> <a href="../../public/images/item-img-1-8.jpg" data-lighter><i class="icon-magnifier"></i></a> </div>
-          </div>
-          <!-- Item Name -->
-          <div class="item-name"> <a href="#.">CERAMIC STONE VASE</a>
-            <p>Lorem ipsum dolor sit amet</p>
-          </div>
-        </div>
       </div>
     </section>
     
@@ -312,11 +149,14 @@
         
         <!-- Popular Item Slide -->
         <div class="papular-block block-slide"> 
-          
+        <?php
+          $sql_product = mysqli_query($con,"SELECT * FROM tbl_sanpham WHERE sanpham_hot='1' ORDER BY sanpham_id DESC LIMIT 10");
+          while($row_sanpham = mysqli_fetch_array($sql_product)){ 
+        ?>
           <!-- Item -->
           <div class="item"> 
             <!-- Item img -->
-            <div class="item-img"> <img class="img-1" src="../../public/images/product-1.jpg" alt="" > <img class="img-2" src="../../public/images/product-2.jpg" alt="" > 
+            <div class="item-img"> <img class="img-1" src="../../img/<?php echo $row_sanpham['sanpham_image'] ?>" alt="" > <img class="img-2" src="../../public/images/product-2.jpg" alt="" > 
               <!-- Overlay -->
               <div class="overlay">
                 <div class="position-center-center">
@@ -325,13 +165,15 @@
               </div>
             </div>
             <!-- Item Name -->
-            <div class="item-name"> <a href="#.">stone cup</a>
-              <p>Lorem ipsum dolor sit amet</p>
+            <div class="item-name"> <a href="#."><?php echo $row_sanpham['sanpham_name'] ?></a>
+              <p><?php echo $row_sanpham['sanpham_mota'] ?></p>
             </div>
             <!-- Price --> 
-            <span class="price"><small>$</small>299</span> </div>
-          
-          <!-- Item -->
+            <span class="price"><?php echo $row_sanpham['sanpham_gia'] ?><small>VND</small> </div>
+        <?php
+          } 
+        ?>
+      <!-- Item -->
           <div class="item"> 
             <!-- Item img -->
             <div class="item-img"> <img class="img-1" src="../../public/images/product-2.jpg" alt="" > <img class="img-2" src="../../public/images/product-2.jpg" alt="" > 
