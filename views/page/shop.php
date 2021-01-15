@@ -1,5 +1,5 @@
 <?php
-include_once('../partials/header.php');
+  include_once('../partials/header.php');
     include_once('../../database/db.class.php');
 ?>
 
@@ -141,14 +141,19 @@ include_once('../partials/header.php');
               <div class="col-md-4 allList">
                 <div class="item"> 
                   <!-- Sale Tags -->
-                  <div class="on-sale"> 10% <span>OFF</span> </div>
+                  <div class="on-sale"> <?php echo round(100 - $row_sanpham['sanpham_giakhuyenmai'] / $row_sanpham['sanpham_gia'] * 100)  ?>% <span>OFF</span> </div>
                   
                   <!-- Item img -->
                   <div class="item-img"> <img class="img-1" src="../../img/<?php echo $row_sanpham['sanpham_image'] ?>" alt=""> <img class="img-2" src="../../public/images/product-2.jpg" alt=""> 
                     <!-- Overlay -->
                     <div class="overlay">
                       <div class="position-center-center">
-                        <div class="inn"><a href="../../public/images/product-2-2.jpg" data-lighter=""><i class="icon-magnifier"></i></a> <a href="#."><i class="icon-basket"></i></a> <a href="#."><i class="icon-heart"></i></a></div>
+                        <div class="inn">
+                          <a href="../../public/images/product-2-2.jpg" data-lighter="">
+                            <i class="icon-magnifier">
+                            </i>
+                          </a> 
+                          <a href="/ecommerce-php/views/page/cart.php?id=<?php echo $row_sanpham["sanpham_id"];?>"><i class="icon-basket"></i></a> <a href="#."><i class="icon-heart"></i></a></div>
                       </div>
                     </div>
                   </div>

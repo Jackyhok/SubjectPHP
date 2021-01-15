@@ -149,6 +149,18 @@
         
         <!-- Popular Item Slide -->
         <div class="papular-block block-slide"> 
+
+        <?php
+          if(isset($_POST['btn-signin'])){
+           echo "<h1>aaaaa</h1>"; 
+        ?>
+        <script>
+          alert("aaaaa");
+        </script>
+        <?php
+          }
+        ?>
+
         <?php
           $sql_product = mysqli_query($con,"SELECT * FROM tbl_sanpham WHERE sanpham_hot='1' ORDER BY sanpham_id DESC LIMIT 10");
           while($row_sanpham = mysqli_fetch_array($sql_product)){ 
@@ -160,7 +172,21 @@
               <!-- Overlay -->
               <div class="overlay">
                 <div class="position-center-center">
-                  <div class="inn"><a href="../../public/images/product-1.jpg" data-lighter><i class="icon-magnifier"></i></a> <a  data-toggle="tooltip" class="btnAddToCart" data-placement="top" title="Add To Cart"><i class="icon-basket"></i></a> <a href="#." data-toggle="tooltip" data-placement="top" title="Add To WishList"><i class="icon-heart"></i></a></div>
+                  <div class="inn">
+                    <form method="POST" enctype="multipart/form-data">
+                      <a href="../../public/images/product-1.jpg" data-lighter>
+                        <i class="icon-magnifier"></i>
+                      </a>
+                      <a href="/ecommerce-php/views/page/cart.php?id=<?php echo $row_sanpham["sanpham_id"];?>" data-toggle="tooltip" type="submit" name="btnAddToCart" class="btnAddToCart" data-placement="top" title="Add To Cart">
+                        <i class="icon-basket">
+                        </i>
+                      </a> 
+                      <a href="#." data-toggle="tooltip" data-placement="top" title="Add To WishList">
+                        <i class="icon-heart">
+                        </i>
+                      </a>
+                    </form>
+                  </div>
                 </div>
               </div>
             </div>

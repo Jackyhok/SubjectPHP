@@ -47,6 +47,11 @@
 </div> -->
 
 <!-- Wrap -->
+<?php
+ include_once('../../database/db.class.php');
+  session_start();
+
+?>
 <div id="wrap"> 
   
   <!-- header -->
@@ -215,14 +220,32 @@
               <!-- USER BASKET -->
               <li class="dropdown user-basket"> <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="true"><i class="icon-basket-loaded"></i> </a>
                 <ul class="dropdown-menu">
+                  <?php
+                    $total_money = 0;
+                    if(isset( $_SESSION["cart_items"]) && count($_SESSION["cart_items"]) > 0 ){
+                      foreach($_SESSION["cart_items"] as $item){
+                          $id           = $item["pro_id"];
+                          $product      = mysqli_query($con,"SELECT * FROM tbl_sanpham WHERE sanpham_id= '$id' ");
+                          $prod         = mysqli_fetch_array($product);
+                          $totalPrice   = $item["quantity"] * $prod["sanpham_gia"];
+                          // $prod         = reset($product);
+                          $total_money  += $item["quantity"] * $prod["sanpham_gia"];
+                  ?>
                   <li>
                     <div class="media-left">
-                      <div class="cart-img"> <a href="#"> <img class="media-object img-responsive" src="../../public/images/cart-img-1.jpg" alt="..."> </a> </div>
+                      <div class="cart-img"> <a href="#"> 
+                      <img class="media-object img-responsive" src="../../img/<?php echo $prod['sanpham_image'] ?>" alt="..."> </a> </div>
                     </div>
                     <div class="media-body">
-                      <h6 class="media-heading">WOOD CHAIR</h6>
-                      <span class="price">129.00 USD</span> <span class="qty">QTY: 01</span> </div>
+                      <h6 class="media-heading"><?php echo $prod['sanpham_name']; ?></h6>
+                      <span class="price"><?php echo $prod['sanpham_gia']; ?> VND</span> <span class="qty">QTY: <?php echo $item["quantity"]; ?></span> </div>
                   </li>
+                  <?php
+                      }
+                    }else{
+                        echo "Khong co san pham nao trong gio hang";
+                    }
+                  ?>
                   <li>
                     <div class="media-left">
                       <div class="cart-img"> <a href="#"> <img class="media-object img-responsive" src="../../public/images/cart-img-2.jpg" alt="..."> </a> </div>
@@ -232,11 +255,11 @@
                       <span class="price">129.00 USD</span> <span class="qty">QTY: 01</span> </div>
                   </li>
                   <li>
-                    <h5 class="text-center">SUBTOTAL: 258.00 USD</h5>
+                    <h5 class="text-center">SUBTOTAL: <?php echo $total_money; ?> USD</h5>
                   </li>
                   <li class="margin-0">
                     <div class="row">
-                      <div class="col-xs-6"> <a href="shopping-cart.html" class="btn">VIEW CART</a></div>
+                      <div class="col-xs-6"> <a href="/ecommerce-php/views/page/cart.php" class="btn">VIEW CART</a></div>
                       <div class="col-xs-6 "> <a href="checkout.html" class="btn">CHECK OUT</a></div>
                     </div>
                   </li>
