@@ -125,7 +125,7 @@
             <div class="position-center-center"> <a href="../../public/images/item-img-1-1.jpg" data-lighter><i class="icon-magnifier"></i></a> </div>
           </div>
           <!-- Item Name -->
-          <div class="item-name"> <a href="#."><?php echo $row_sanpham['sanpham_name'] ?></a>
+          <div class="item-name"> <a href="/ecommerce-php/views/page/product-detail.php?id=<?php echo $row_sanpham["sanpham_id"];?>&cateID=<?php echo $row_sanpham["category_id"];?>""><?php echo $row_sanpham['sanpham_name'] ?></a>
             <p><?php echo $row_sanpham['sanpham_mota'] ?></p>
           </div>
         </div>
@@ -191,7 +191,7 @@
               </div>
             </div>
             <!-- Item Name -->
-            <div class="item-name"> <a href="#."><?php echo $row_sanpham['sanpham_name'] ?></a>
+            <div class="item-name"> <a href="/ecommerce-php/views/page/product-detail.php?id=<?php echo $row_sanpham["sanpham_id"];?>&cateID=<?php echo $row_sanpham["category_id"];?>""><?php echo $row_sanpham['sanpham_name'] ?></a>
               <p><?php echo $row_sanpham['sanpham_mota'] ?></p>
             </div>
             <!-- Price --> 

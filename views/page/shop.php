@@ -134,6 +134,7 @@
             <!-- Popular Item Slide -->
             <div class="papular-block row listPro"> 
             <?php
+                
                 $sql_product = mysqli_query($con,"SELECT * FROM tbl_sanpham ORDER BY sanpham_id DESC LIMIT 10");
                 while($row_sanpham = mysqli_fetch_array($sql_product)){ 
             ?>
@@ -158,7 +159,7 @@
                     </div>
                   </div>
                   <!-- Item Name -->
-                  <div class="item-name"> <a href="#."><?php echo $row_sanpham['sanpham_name'] ?></a>
+                  <div class="item-name"> <a href="/ecommerce-php/views/page/product-detail.php?id=<?php echo $row_sanpham["sanpham_id"];?>&cateID=<?php echo $row_sanpham["category_id"];?>"><?php echo $row_sanpham['sanpham_name'] ?></a>
                     <p><?php echo $row_sanpham['sanpham_mota'] ?></p>
                   </div>
                   <!-- Price --> 
@@ -188,7 +189,7 @@
                     </div>
                   </div>
                   <!-- Item Name -->
-                  <div class="item-name"> <a href="#."><?php echo $row_sanpham['sanpham_name'] ?></a>
+                  <div class="item-name"> <a href="/ecommerce-php/views/page/product-detail.php?id=<?php echo $row_sanpham["sanpham_id"];?>&cateID=<?php echo $row_sanpham["category_id"];?>"><?php echo $row_sanpham['sanpham_name'] ?></a>
                     <p><?php echo $row_sanpham['sanpham_mota'] ?></p>
                   </div>
                   <!-- Price --> 
@@ -218,7 +219,7 @@
                     </div>
                   </div>
                   <!-- Item Name -->
-                  <div class="item-name"> <a href="#."><?php echo $row_sanpham['sanpham_name'] ?></a>
+                  <div class="item-name"> <a href="/ecommerce-php/views/page/product-detail.php?id=<?php echo $row_sanpham["sanpham_id"];?>&cateID=<?php echo $row_sanpham["category_id"];?>"><?php echo $row_sanpham['sanpham_name'] ?></a>
                     <p><?php echo $row_sanpham['sanpham_mota'] ?></p>
                   </div>
                   <!-- Price --> 
@@ -248,7 +249,7 @@
                     </div>
                   </div>
                   <!-- Item Name -->
-                  <div class="item-name"> <a href="#."><?php echo $row_sanpham['sanpham_name'] ?></a>
+                  <div class="item-name"> <a href="/ecommerce-php/views/page/product-detail.php?id=<?php echo $row_sanpham["sanpham_id"];?>&cateID=<?php echo $row_sanpham["category_id"];?>"><?php echo $row_sanpham['sanpham_name'] ?></a>
                     <p><?php echo $row_sanpham['sanpham_mota'] ?></p>
                   </div>
                   <!-- Price --> 
@@ -278,7 +279,7 @@
                     </div>
                   </div>
                   <!-- Item Name -->
-                  <div class="item-name"> <a href="#."><?php echo $row_sanpham['sanpham_name'] ?></a>
+                  <div class="item-name"> <a href="/ecommerce-php/views/page/product-detail.php?id=<?php echo $row_sanpham["sanpham_id"];?>&cateID=<?php echo $row_sanpham["category_id"];?>"><?php echo $row_sanpham['sanpham_name'] ?></a>
                     <p><?php echo $row_sanpham['sanpham_mota'] ?></p>
                   </div>
                   <!-- Price --> 

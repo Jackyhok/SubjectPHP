@@ -25,6 +25,8 @@
 <!-- JavaScripts -->
 <script src="../../public/js/modernizr.js"></script>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js" integrity="sha512-VEd+nq25CkR676O+pLBnDW09R7VQX9Mdiij052gVCp5yVH3jGtH70Ho/UUv4mJDsEdTvqRCFZg0NKGiojGnUCw==" crossorigin="anonymous"></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css" integrity="sha512-vKMx8UnXk60zUwyUnUPM3HbQo8QfmNx7+ltw8Pm5zLusl1XIfwcxo8DbWCqMGKaWeNxWA8yrx5v3SaVpMvR3CA==" crossorigin="anonymous" />
 <!-- Online Fonts -->
 <link href='https://fonts.googleapis.com/css?family=Montserrat:400,700' rel='stylesheet' type='text/css'>
 <link href='https://fonts.googleapis.com/css?family=Playfair+Display:400,700,900' rel='stylesheet' type='text/css'>
@@ -246,21 +248,22 @@
                         echo "Khong co san pham nao trong gio hang";
                     }
                   ?>
-                  <li>
-                    <div class="media-left">
-                      <div class="cart-img"> <a href="#"> <img class="media-object img-responsive" src="../../public/images/cart-img-2.jpg" alt="..."> </a> </div>
-                    </div>
-                    <div class="media-body">
-                      <h6 class="media-heading">WOOD STOOL</h6>
-                      <span class="price">129.00 USD</span> <span class="qty">QTY: 01</span> </div>
-                  </li>
+                  
                   <li>
                     <h5 class="text-center">SUBTOTAL: <?php echo $total_money; ?> USD</h5>
                   </li>
                   <li class="margin-0">
                     <div class="row">
                       <div class="col-xs-6"> <a href="/ecommerce-php/views/page/cart.php" class="btn">VIEW CART</a></div>
-                      <div class="col-xs-6 "> <a href="checkout.html" class="btn">CHECK OUT</a></div>
+                      <?php
+                          $username = "";
+                          if(isset($_SESSION['user']) != ""){
+                              $username = $_SESSION['user'];
+                              echo "<div class='col-xs-6'> <a href='/ecommerce-php/views/page/checkout.php' class='btn'>CHECK OUT</a></div>";
+                          }else{
+                              echo "<div class='col-xs-6'> <a href='/ecommerce-php/views/page/login.php' class='btn'>LOGIN</a></div>";
+                          }
+                      ?>
                     </div>
                   </li>
                 </ul>

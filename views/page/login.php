@@ -32,41 +32,73 @@
               <!-- ESTIMATE SHIPPING & TAX -->
               <div class="col-sm-7">
                 <h6>LOGIN YOUR ACCOUNT</h6>
-                <form>
+                <?php
+                  
+                  // if(isset($_SESSION['user']) != "" )
+                  // {
+                  //     header("Location: index.php");
+                  // }
+                  if(isset($_POST['btnLogin'])){
+                      $u_name     = $_POST['txtUserName'];
+                      $u_pass     = $_POST['txtPassword'];
+                      $password   = md5($u_pass);
+                      $sql_user = mysqli_query($con,"SELECT * FROM tbl_khachhang WHERE email='$u_name' AND password='$password' ");
+                      $result   = mysqli_fetch_array($sql_user);
+                      if(!$result){
+                        ?>
+                            <script>
+                              toastr.error("Mời bạn đăng nhập lại","Thông báo");
+                            </script>
+                        <?php
+                      }
+                      else{
+                          $_SESSION['user'] = $u_name;
+                          ?>
+                            <script>
+                              toastr.success("bạn đã đăng nhập thành công","Thông báo");
+                              setTimeout(() => {
+                                window.location.href = "/ecommerce-php/views/page/index.php"
+                              }, 1000);
+                            </script>
+                          <?php
+                      }
+                  }
+              ?>
+                <form method="POST" enctype="multipart/form-data" >
                   <ul class="row">
                     
                     <!-- Name -->
                     <li class="col-md-12">
                       <label> USERNAME
-                        <input type="text" name="first-name" value="" placeholder="">
+                        <input type="text" name="txtUserName" value="" placeholder="">
                       </label>
                     </li>
                     <!-- LAST NAME -->
                     <li class="col-md-12">
                       <label> PASSWORD
-                        <input type="password" name="last-name" value="" placeholder="">
+                        <input type="password" name="txtPassword" value="" placeholder="">
                       </label>
                     </li>
                     
                     <!-- LOGIN -->
                     <li class="col-md-4">
-                      <button type="submit" class="btn">LOGIN</button>
+                      <button type="submit" name="btnLogin" class="btn">LOGIN</button>
                     </li>
                     
                     <!-- CREATE AN ACCOUNT -->
-                    <li class="col-md-4">
+                    <!-- <li class="col-md-4">
                       <div class="checkbox margin-0 margin-top-20">
                         <input id="checkbox1" class="styled" type="checkbox">
                         <label for="checkbox1"> Stay me Login</label>
                       </div>
-                    </li>
+                    </li> -->
                     
                     <!-- FORGET PASS -->
-                    <li class="col-md-4">
+                    <!-- <li class="col-md-4">
                       <div class="checkbox margin-0 margin-top-20 text-right">
                         <a href="#.">Forget Password</a>
                       </div>
-                    </li>
+                    </li> -->
                   </ul>
                 </form>
                 
@@ -138,3 +170,5 @@
 <?php
     include_once('../partials/footer.php');
 ?>
+
+

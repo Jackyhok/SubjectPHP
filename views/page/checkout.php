@@ -34,137 +34,130 @@
               <!-- ESTIMATE SHIPPING & TAX -->
               <div class="col-sm-7">
                 <h6>BILLING DETAILS</h6>
-                <form>
+                <?php
+                    $username = "";
+                    $infoUser;
+                    if(isset($_SESSION['user']) != ""){
+                        $username = $_SESSION['user'];
+                        $user      = mysqli_query($con,"SELECT * FROM tbl_khachhang WHERE email= '$username' ");
+                        $infoUser  = mysqli_fetch_array($user);
+                    }
+                ?>
+                <form method="POST" enctype="multipart/form-data" >
                   <ul class="row">
                     
                     <!-- Name -->
                     <li class="col-md-6">
-                      <label> *FIRST NAME
-                        <input type="text" name="first-name" value="" placeholder="">
+                      <label> *EMAIL
+                        <input type="text" value="<?php echo $infoUser['name']; ?>" name="first-name" value="" placeholder="">
                       </label>
                     </li>
                     <!-- LAST NAME -->
                     <li class="col-md-6">
-                      <label> *LAST NAME
-                        <input type="text" name="last-name" value="" placeholder="">
+                      <label> *PHONE
+                        <input type="text" value="<?php echo $infoUser['phone']; ?>" name="last-name" value="" placeholder="">
                       </label>
                     </li>
                     <li class="col-md-6"> 
                       <!-- COMPANY NAME -->
-                      <label>COMPANY NAME
-                        <input type="text" name="company" value="" placeholder="">
+                      <label> *ADDRESS
+                        <input type="text" value="<?php echo $infoUser['address']; ?>"  name="company" value="" placeholder="">
                       </label>
                     </li>
-                    <li class="col-md-6"> 
-                      <!-- ADDRESS -->
+                    <!-- <li class="col-md-6"> 
                       <label>*ADDRESS
                         <input type="text" name="address" value="" placeholder="">
                       </label>
                     </li>
-                    <!-- TOWN/CITY -->
                     <li class="col-md-6">
                       <label>*TOWN/CITY
                         <input type="text" name="town" value="" placeholder="">
                       </label>
                     </li>
                     
-                    <!-- COUNTRY -->
                     <li class="col-md-6">
                       <label> COUNTRY
                         <input type="text" name="contry-state" value="" placeholder="">
                       </label>
                     </li>
                     
-                    <!-- EMAIL ADDRESS -->
                     <li class="col-md-6">
                       <label> *EMAIL ADDRESS
                         <input type="text" name="contry-state" value="" placeholder="">
                       </label>
                     </li>
-                    <!-- PHONE -->
                     <li class="col-md-6">
                       <label> *PHONE
                         <input type="text" name="postal-code" value="" placeholder="">
                       </label>
                     </li>
                     
-                    <!-- PHONE -->
                     <li class="col-md-6">
                       <button type="submit" class="btn">continue</button>
                     </li>
                     
-                    <!-- CREATE AN ACCOUNT -->
                     <li class="col-md-6">
                       <div class="checkbox margin-0 margin-top-20">
                         <input id="checkbox1" class="styled" type="checkbox">
                         <label for="checkbox1"> Ship to a different address </label>
                       </div>
-                    </li>
+                    </li> -->
                   </ul>
                 </form>
                 
                 <!-- SHIPPING info -->
-                <h6 class="margin-top-50">SHIPPING info</h6>
+                <!-- <h6 class="margin-top-50">SHIPPING info</h6>
                 <form>
                   <ul class="row">
                     
-                    <!-- Name -->
                     <li class="col-md-6">
                       <label> *FIRST NAME
                         <input type="text" name="first-name" value="" placeholder="">
                       </label>
                     </li>
-                    <!-- LAST NAME -->
                     <li class="col-md-6">
                       <label> *LAST NAME
                         <input type="text" name="last-name" value="" placeholder="">
                       </label>
                     </li>
                     <li class="col-md-6"> 
-                      <!-- COMPANY NAME -->
                       <label>COMPANY NAME
                         <input type="text" name="company" value="" placeholder="">
                       </label>
                     </li>
                     <li class="col-md-6"> 
-                      <!-- ADDRESS -->
                       <label>*ADDRESS
                         <input type="text" name="address" value="" placeholder="">
                       </label>
                     </li>
-                    <!-- TOWN/CITY -->
                     <li class="col-md-6">
                       <label>*TOWN/CITY
                         <input type="text" name="town" value="" placeholder="">
                       </label>
                     </li>
                     
-                    <!-- COUNTRY -->
                     <li class="col-md-6">
                       <label> COUNTRY
                         <input type="text" name="contry-state" value="" placeholder="">
                       </label>
                     </li>
                     
-                    <!-- EMAIL ADDRESS -->
                     <li class="col-md-6">
                       <label> *EMAIL ADDRESS
                         <input type="text" name="contry-state" value="" placeholder="">
                       </label>
                     </li>
-                    <!-- PHONE -->
                     <li class="col-md-6">
                       <label> *PHONE
                         <input type="text" name="postal-code" value="" placeholder="">
                       </label>
                     </li>
                     
-                    <!-- PHONE -->
                     <li class="col-md-6">
                       <button type="submit" class="btn">SUBMIT</button>
                     </li>
                   </ul>
-                </form>
+                </form> -->
               </div>
               
               <!-- SUB TOTAL -->
@@ -183,7 +176,7 @@
                                 // $prod         = reset($product);
                                 $total_money  += $item["quantity"] * $prod["sanpham_gia"];
                     ?>
-                    <p><?php echo $prod["sanpham_name"];?><span><?php echo $totalPrice; ?> VND </span></p>
+                    <p><?php echo $prod["sanpham_name"];?> (<?php echo $item["quantity"];?>) <span><?php echo $totalPrice; ?> VND </span></p>
                     <?php
                             }
                         }else{
@@ -203,7 +196,7 @@
                         </div>
                         <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam erat turpis, pellentesque non leo eget, pulvinar pretium arcu. Mauris porta elit non.</p>
                       </li>
-                      <li>
+                      <!-- <li>
                         <div class="radio">
                           <input type="radio" name="radio1" id="radio2" value="option2">
                           <label for="radio2"> CASH ON DELIVERY</label>
@@ -220,7 +213,7 @@
                           <input type="radio" name="radio1" id="radio4" value="option4">
                           <label for="radio4"> PAYPAL </label>
                         </div>
-                      </li>
+                      </li> -->
                       <li>
                         <div class="checkbox">
                           <input id="checkbox3-4" class="styled" type="checkbox">
@@ -228,7 +221,7 @@
                         </div>
                       </li>
                     </ul>
-                    <a href="#." class="btn  btn-dark pull-right margin-top-30">PLACE ORDER</a> </div>
+                    <a class="btn  btn-dark pull-right margin-top-30 btnOrder">PLACE ORDER</a> </div>
                 </div>
               </div>
             </div>
@@ -239,7 +232,7 @@
     
     <!-- About -->
     <section class="small-about padding-top-150 padding-bottom-150">
-    <div class="container"> 
+      <div class="container"> 
         
         <!-- Main Heading -->
         <div class="heading text-center">
@@ -276,3 +269,13 @@
 <?php
     include_once('../partials/footer.php');
 ?>
+<script>
+
+    $(document).on("click", ".btnOrder", function(){
+      toastr.success("Thanh toán thành công", "Thông Báo")
+      setTimeout(() => {
+       window.location.href = "/ecommerce-php/views/page/checkout-success.php"
+      }, 2000);
+    })
+
+</script>
