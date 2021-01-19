@@ -242,14 +242,12 @@
         let value =  $(this).attr("value");
         let id =  $(this).attr("_idPro");
         
-        console.log({ id });
         window.location.href = `/ecommerce-php/views/dashboards/page/list-product.php?quanly=${value}&id=${id}`
     })
     $(document).on("click", ".btnDelete", function(){
         let value =  $(this).attr("value");
         let id =  $(this).attr("_idPro");
         
-        console.log({ id });
         window.location.href = `/ecommerce-php/views/dashboards/page/list-product.php?${value}&id=${id}`
     })
 </script>

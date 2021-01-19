@@ -27,7 +27,7 @@
             <div class="card-body">
             <button type="button" onclick="location.href='/ecommerce-php/views/dashboards/page/list-category.php'" class="btn btn-success btn-rounded btn-fw">Thêm Danh Mục</button>
             <h1></h1>
-            <h4 class="card-title">Horizontal Two column</h4>
+            <h4 class="card-title"></h4>
                 <?php
                     if(isset($_GET['quanly'])=='capnhat'){
                         $id_capnhat = $_GET['id'];

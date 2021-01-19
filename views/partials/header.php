@@ -62,7 +62,7 @@
       <div class="container"> 
         
         <!-- Logo -->
-        <div class="logo"> <a href="index.html"><img class="img-responsive" src="../../public/images/logo.png" alt="" ></a> </div>
+        <div class="logo"> <a href="/ecommerce-php/views/page/index.php"><img class="img-responsive" src="../../public/images/logo.png" alt="" ></a> </div>
         <nav class="navbar ownmenu">
           <div class="navbar-header">
             <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#nav-open-btn" aria-expanded="false"> <span class="sr-only">Toggle navigation</span> <span class="icon-bar"><i class="fa fa-navicon"></i></span> </button>
@@ -71,8 +71,8 @@
           <!-- NAV -->
           <div class="collapse navbar-collapse" id="nav-open-btn">
             <ul class="nav">
-              <li class="dropdown active"> <a href="#." class="dropdown-toggle" data-toggle="dropdown">Home</a>
-                <ul class="dropdown-menu">
+              <li class="dropdown active"><a href="/ecommerce-php/views/page/index.php" class="dropdown-toggle" >Home</a>
+                <!-- <ul class="dropdown-menu">
                   <li> <a href="index.html">Index Default</a> </li>
                   <li> <a href="index-1.html">Index 2</a> </li>
                   <li> <a href="index-2.html">Index 3</a></li>
@@ -80,10 +80,10 @@
                   <li> <a href="index-header-2.html">Index Header 2</a></li>
                   <li> <a href="index-header-3.html">Index Header 3</a></li>
                   <li> <a href="index-header-4.html">Index Header 4</a></li>
-                </ul>
+                </ul> -->
               </li>
-              <li class="dropdown"> <a href="#." class="dropdown-toggle" data-toggle="dropdown">Pages</a>
-                <ul class="dropdown-menu">
+              <li class="dropdown"> <a href="/ecommerce-php/views/page/shop.php" class="dropdown-toggle">Shop</a>
+                <!-- <ul class="dropdown-menu">
                   <li> <a href="shop_01.html">Shop 01 </a> </li>
                   <li> <a href="shop_02.html">Shop 02</a> </li>
                   <li> <a href="shop_03.html">Shop 03 </a> </li>
@@ -99,12 +99,12 @@
                   <li> <a href="blog-list_02.html">Blog List 02</a> </li>
                   <li> <a href="blog-list_03.html">Blog List 03 </a> </li>
                   <li> <a href="blog-detail_01.html">Blog Detail 01 </a> </li>
-                </ul>
+                </ul> -->
               </li>
-              <li> <a href="about-us_01.html">About </a> </li>
+              <li> <a href="https://mwg.vn/">About </a> </li>
               
               <!-- Two Link Option -->
-              <li class="dropdown"> <a href="#." class="dropdown-toggle" data-toggle="dropdown">Designer</a>
+              <!-- <li class="dropdown"> <a href="#." class="dropdown-toggle" data-toggle="dropdown">Designer</a>
                 <div class="dropdown-menu two-option">
                   <div class="row">
                     <ul class="col-sm-6">
@@ -129,15 +129,15 @@
                     </ul>
                   </div>
                 </div>
-              </li>
+              </li> -->
               
               <!-- MEGA MENU -->
-              <li class="dropdown megamenu"> <a href="#." class="dropdown-toggle" data-toggle="dropdown">store</a>
+              <!-- <li class="dropdown megamenu"> <a href="#." class="dropdown-toggle" data-toggle="dropdown">store</a>
                 <div class="dropdown-menu">
-                  <div class="row"> 
+                  <div class="row">  -->
                     
                     <!-- Shop Pages -->
-                    <div class="col-md-3">
+                    <!-- <div class="col-md-3">
                       <h6>Shop Pages</h6>
                       <ul>
                         <li> <a href="shop_01.html">Shop 01 </a> </li>
@@ -149,10 +149,10 @@
                         <li> <a href="shopping-cart.html">Shopping Cart</a> </li>
                         <li> <a href="checkout.html">Checkout</a> </li>
                       </ul>
-                    </div>
+                    </div> -->
                     
                     <!-- TOp Rate Products -->
-                    <div class="col-md-4">
+                    <!-- <div class="col-md-4">
                       <h6>TOp Rate Products</h6>
                       <div class="top-rated">
                         <ul>
@@ -185,10 +185,10 @@
                           </li>
                         </ul>
                       </div>
-                    </div>
+                    </div> -->
                     
                     <!-- New Arrival -->
-                    <div class="col-md-5">
+                    <!-- <div class="col-md-5">
                       <h5>NEW ARRIVAL 2016 <span>(Best Collection)</span></h5>
                       <img class="nav-img" src="../../public/images/nav-img.png" alt="" >
                       <p>Lorem ipsum dolor sit amet,<br>
@@ -196,9 +196,9 @@
                         Donec faucibus maximus<br>
                         vehicula.</p>
                       <a href="#." class="btn btn-small btn-round">SHOP NOW</a> </div>
-                  </div>
-                </div>
-              </li>
+                  </div> -->
+                <!-- </div> -->
+              <!-- </li> -->
               <li> <a href="contact.html"> contact</a> </li>
             </ul>
           </div>
@@ -211,11 +211,23 @@
               <li class="dropdown user-acc"> <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" ><i class="icon-user"></i> </a>
                 <ul class="dropdown-menu">
                   <li>
-                    <h6>HELLO! Jhon Smith</h6>
+                  <?php
+                        $username = "";
+                        $infoUser;
+                        if(isset($_SESSION['user']) != ""){
+                            $username = $_SESSION['user'];
+                            $user      = mysqli_query($con,"SELECT * FROM tbl_khachhang WHERE email= '$username' ");
+                            $infoUser  = mysqli_fetch_array($user);
+                    ?>
+                    <h6>HELLO! <?php echo $infoUser['name']; ?></h6>
+                  <?php
+                        
+                          }
+                    ?>
                   </li>
-                  <li><a href="#">MY CART</a></li>
-                  <li><a href="#">ACCOUNT INFO</a></li>
-                  <li><a href="#">LOG OUT</a></li>
+                  <!-- <li><a href="#">MY CART</a></li> -->
+                  <!-- <li><a href="#">ACCOUNT INFO</a></li> -->
+                  <li><a href="/ecommerce-php/views/page/login.php" >LOG OUT</a></li>
                 </ul>
               </li>
               

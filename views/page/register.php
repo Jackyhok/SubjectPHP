@@ -32,84 +32,99 @@
               <!-- ESTIMATE SHIPPING & TAX -->
               <div class="col-sm-12">
                 <h6>REGISTER</h6>
-                <form>
+                <?php
+                
+                if(isset($_POST['btnRegister'])){
+                  $email        = $_POST['txtEmail'];
+                  $name         = $_POST['txtName'];
+                  $phone        = $_POST['txtPhone'];
+                  $address      = $_POST['txtAddress'];
+                  $password     = $_POST['txtPassword'];
+                  $password2    = $_POST['txtPassword2'];
+                  if( $password != $password2){
+                    ?>  
+                      <script>
+                          toastr.error("Mời bạn nhập lại mật khẩu","Thông báo");
+                      </script>
+                    <?php
+                  }else{
+                    $passworda   = md5($password);
+                    $sql_insert_user = mysqli_query($con,"INSERT INTO tbl_khachhang( name, phone, address, email, password )
+                                                            values ('$name','$phone','$address','$email','$passworda')
+                                                            ");
+                    // $result   = mysqli_fetch_array($sql_user);
+                    if(!$sql_insert_user ){
+                      ?>
+                          <script>
+                            toastr.error("Mời bạn đăng ký lại","Thông báo");
+                          </script>
+                      <?php
+                    }
+                    else{
+                        ?>
+                          <script>
+                            toastr.success("bạn đã đăng ký thành công","Thông báo");
+                            setTimeout(() => {
+                              window.location.href = "/ecommerce-php/views/page/login.php"
+                            }, 1000);
+                          </script>
+                        <?php
+                    }
+                  }
+                }
+                ?>
+                <form method="POST" enctype="multipart/form-data">
                   <ul class="row">
                     
                     <!-- Name -->
                     <li class="col-md-6">
-                      <label> *FIRST NAME
-                        <input type="text" name="first-name" value="" placeholder="">
+                      <label> *EMAIL ADDRESS
+                        <input type="text" name="txtEmail" value="" placeholder="">
                       </label>
                     </li>
                     <!-- LAST NAME -->
                     <li class="col-md-6">
-                      <label> *LAST NAME
-                        <input type="text" name="last-name" value="" placeholder="">
+                      <label> *PASSWORD
+                        <input type="password" name="txtPassword" value="" placeholder="">
                       </label>
                     </li>
-                    
+
+                    <li class="col-md-6">
+                      <label> *COMFIRM PASSWORD
+                        <input type="password" name="txtPassword2" value="" placeholder="">
+                      </label>
+                    </li>
+
                     <!-- EMAIL ADDRESS -->
                     <li class="col-md-6">
-                      <label> *EMAIL ADDRESS
-                        <input type="text" name="contry-state" value="" placeholder="">
+                      <label> *NAME
+                        <input type="text" name="txtName" value="" placeholder="">
                       </label>
                     </li>
                     <!-- PHONE -->
                     <li class="col-md-6">
                       <label> *PHONE
-                        <input type="text" name="postal-code" value="" placeholder="">
+                        <input type="text" name="txtPhone" value="" placeholder="">
                       </label>
                     </li>
                     
                     <!-- LAST NAME -->
                     <li class="col-md-6">
-                      <label> *PASSWORD
-                        <input type="password" name="last-name" value="" placeholder="">
-                      </label>
-                    </li>
-                    
-                    <!-- LAST NAME -->
-                    <li class="col-md-6">
-                      <label> *PASSWORD
-                        <input type="password" name="last-name" value="" placeholder="">
-                      </label>
-                    </li>
-                    <li class="col-md-6"> 
-                      <!-- ADDRESS -->
-                      <label>*ADDRESS
-                        <input type="text" name="address" value="" placeholder="">
-                      </label>
-                    </li>
-                    <li class="col-md-6"> 
-                      <!-- ADDRESS -->
-                      <label>*ADDRESS
-                        <input type="text" name="address" value="" placeholder="">
-                      </label>
-                    </li>
-                    
-                    <!-- COUNTRY -->
-                    <li class="col-md-6">
-                      <label> COUNTRY
-                        <div class="btn-group bootstrap-select"><button type="button" class="btn dropdown-toggle btn-default" data-toggle="dropdown" title="COUNTRY"><span class="filter-option pull-left">COUNTRY</span>&nbsp;<span class="bs-caret"><span class="caret"></span></span></button><div class="dropdown-menu open"><ul class="dropdown-menu inner" role="menu"><li data-original-index="0" class="selected"><a tabindex="0" class="" style="" data-tokens="null"><span class="text">COUNTRY</span><span class="glyphicon glyphicon-ok check-mark"></span></a></li><li data-original-index="1"><a tabindex="0" class="" style="" data-tokens="null"><span class="text">Country 2</span><span class="glyphicon glyphicon-ok check-mark"></span></a></li><li data-original-index="2"><a tabindex="0" class="" style="" data-tokens="null"><span class="text">Country 3</span><span class="glyphicon glyphicon-ok check-mark"></span></a></li></ul></div><select class="selectpicker" name="contry-state" tabindex="-98">
-                          <option>COUNTRY</option>
-                          <option>Country 2</option>
-                          <option>Country 3</option>
-                        </select></div>
-                      </label>
-                    </li>
-                    
-                    <!-- TOWN/CITY -->
-                    <li class="col-md-6">
-                      <label>*TOWN/CITY
-                        <input type="text" name="town" value="" placeholder="">
+                      <label> *ADDRESS
+                        <input type="text" name="txtAddress" value="" placeholder="">
                       </label>
                     </li>
                     
                     <!-- PHONE -->
                     <li class="col-md-6">
-                      <button type="submit" class="btn">REGISTER NOW</button>
                     </li>
                   </ul>
+                  <button type="submit" id="btnRegister" name="btnRegister" class="btn">REGISTER NOW</button>
+                  <!-- <script>
+                    $(document).on("click", "#btnRegister", function(e){
+                      e.preventDefault();
+                    });
+                  </script> -->
                 </form>
               </div>
             </div>
