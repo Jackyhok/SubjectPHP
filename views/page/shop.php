@@ -95,8 +95,8 @@
               </ul> -->
               
               <!-- SIDE BACR BANER -->
-              <div class="side-bnr margin-top-50"> <img class="img-responsive" src="../../public/images/sidebar-bnr.jpg" alt="">
-                <div class="position-center-center"> <span class="price"><small>$</small>299</span>
+              <div class="side-bnr margin-top-50"> <img class="img-responsive" src="../../img/air-zoom-pegasus-37-running-shoe-mwrTCc.jpg" alt="">
+                <div class="position-center-center"> <span class="price">1200000<small>VND</small></span>
                   <div class="bnr-text">look
                     hot
                     with
@@ -145,12 +145,12 @@
                   <div class="on-sale"> <?php echo round(100 - $row_sanpham['sanpham_giakhuyenmai'] / $row_sanpham['sanpham_gia'] * 100)  ?>% <span>OFF</span> </div>
                   
                   <!-- Item img -->
-                  <div class="item-img"> <img class="img-1" src="../../img/<?php echo $row_sanpham['sanpham_image'] ?>" alt=""> <img class="img-2" src="../../public/images/product-2.jpg" alt=""> 
+                  <div class="item-img"> <img class="img-1" src="../../img/<?php echo $row_sanpham['sanpham_image'] ?>" alt=""> <img class="img-2" src="../../img/<?php echo $row_sanpham['sanpham_image'] ?>" alt=""> 
                     <!-- Overlay -->
                     <div class="overlay">
                       <div class="position-center-center">
                         <div class="inn">
-                          <a href="../../public/images/product-2-2.jpg" data-lighter="">
+                          <a href="../../img/<?php echo $row_sanpham['sanpham_image'] ?>" data-lighter="">
                             <i class="icon-magnifier">
                             </i>
                           </a> 
@@ -180,11 +180,11 @@
                   <div class="on-sale"> 10% <span>OFF</span> </div>
                   
                   <!-- Item img -->
-                  <div class="item-img"> <img class="img-1" src="../../img/<?php echo $row_sanpham['sanpham_image'] ?>" alt=""> <img class="img-2" src="../../public/images/product-2.jpg" alt=""> 
+                  <div class="item-img"> <img class="img-1" src="../../img/<?php echo $row_sanpham['sanpham_image'] ?>" alt=""> <img class="img-2" src="../../img/<?php echo $row_sanpham['sanpham_image'] ?>" alt=""> 
                     <!-- Overlay -->
                     <div class="overlay">
                       <div class="position-center-center">
-                        <div class="inn"><a href="../../public/images/product-2-2.jpg" data-lighter=""><i class="icon-magnifier"></i></a> <a href="#."><i class="icon-basket"></i></a> <a href="#."><i class="icon-heart"></i></a></div>
+                        <div class="inn"><a href="../../img/<?php echo $row_sanpham['sanpham_image'] ?>" data-lighter=""><i class="icon-magnifier"></i></a> <a href="/ecommerce-php/views/page/cart.php?id=<?php echo $row_sanpham["sanpham_id"];?>"><i class="icon-basket"></i></a> <a href="#."><i class="icon-heart"></i></a></div>
                       </div>
                     </div>
                   </div>
@@ -210,11 +210,11 @@
                   <div class="on-sale"> 10% <span>OFF</span> </div>
                   
                   <!-- Item img -->
-                  <div class="item-img"> <img class="img-1" src="../../img/<?php echo $row_sanpham['sanpham_image'] ?>" alt=""> <img class="img-2" src="../../public/images/product-2.jpg" alt=""> 
+                  <div class="item-img"> <img class="img-1" src="../../img/<?php echo $row_sanpham['sanpham_image'] ?>" alt=""> <img class="img-2" src="../../img/<?php echo $row_sanpham['sanpham_image'] ?>" alt=""> 
                     <!-- Overlay -->
                     <div class="overlay">
                       <div class="position-center-center">
-                        <div class="inn"><a href="../../public/images/product-2-2.jpg" data-lighter=""><i class="icon-magnifier"></i></a> <a href="#."><i class="icon-basket"></i></a> <a href="#."><i class="icon-heart"></i></a></div>
+                        <div class="inn"><a href="../../img/<?php echo $row_sanpham['sanpham_image'] ?>" data-lighter=""><i class="icon-magnifier"></i></a> <a href="/ecommerce-php/views/page/cart.php?id=<?php echo $row_sanpham["sanpham_id"];?>"><i class="icon-basket"></i></a> <a href="#."><i class="icon-heart"></i></a></div>
                       </div>
                     </div>
                   </div>
@@ -240,11 +240,11 @@
                   <div class="on-sale"> 10% <span>OFF</span> </div>
                   
                   <!-- Item img -->
-                  <div class="item-img"> <img class="img-1" src="../../img/<?php echo $row_sanpham['sanpham_image'] ?>" alt=""> <img class="img-2" src="../../public/images/product-2.jpg" alt=""> 
+                  <div class="item-img"> <img class="img-1" src="../../img/<?php echo $row_sanpham['sanpham_image'] ?>" alt=""> <img class="img-2" src="../../img/<?php echo $row_sanpham['sanpham_image'] ?>" alt=""> 
                     <!-- Overlay -->
                     <div class="overlay">
                       <div class="position-center-center">
-                        <div class="inn"><a href="../../public/images/product-2-2.jpg" data-lighter=""><i class="icon-magnifier"></i></a> <a href="#."><i class="icon-basket"></i></a> <a href="#."><i class="icon-heart"></i></a></div>
+                        <div class="inn"><a href="../../img/<?php echo $row_sanpham['sanpham_image'] ?>" data-lighter=""><i class="icon-magnifier"></i></a> <a href="/ecommerce-php/views/page/cart.php?id=<?php echo $row_sanpham["sanpham_id"];?>"><i class="icon-basket"></i></a> <a href="#."><i class="icon-heart"></i></a></div>
                       </div>
                     </div>
                   </div>
@@ -270,11 +270,11 @@
                   <div class="on-sale"> 10% <span>OFF</span> </div>
                   
                   <!-- Item img -->
-                  <div class="item-img"> <img class="img-1" src="../../img/<?php echo $row_sanpham['sanpham_image'] ?>" alt=""> <img class="img-2" src="../../public/images/product-2.jpg" alt=""> 
+                  <div class="item-img"> <img class="img-1" src="../../img/<?php echo $row_sanpham['sanpham_image'] ?>" alt=""> <img class="img-2" src="../../img/<?php echo $row_sanpham['sanpham_image'] ?>" alt=""> 
                     <!-- Overlay -->
                     <div class="overlay">
                       <div class="position-center-center">
-                        <div class="inn"><a href="../../public/images/product-2-2.jpg" data-lighter=""><i class="icon-magnifier"></i></a> <a href="#."><i class="icon-basket"></i></a> <a href="#."><i class="icon-heart"></i></a></div>
+                        <div class="inn"><a href="../../img/<?php echo $row_sanpham['sanpham_image'] ?>" data-lighter=""><i class="icon-magnifier"></i></a> <a href="/ecommerce-php/views/page/cart.php?id=<?php echo $row_sanpham["sanpham_id"];?>"><i class="icon-basket"></i></a> <a href="#."><i class="icon-heart"></i></a></div>
                       </div>
                     </div>
                   </div>

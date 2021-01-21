@@ -81,8 +81,11 @@
                     </li>
                     
                     <!-- LOGIN -->
-                    <li class="col-md-4">
+                    <li class="col-md-2">
                       <button type="submit" name="btnLogin" class="btn">LOGIN</button>
+                    </li>
+                    <li class="col-md-2">
+                      <button type="submit" id="btnRegister" class="btn">REGISTER</button>
                     </li>
                     
                     <!-- CREATE AN ACCOUNT -->
@@ -170,5 +173,14 @@
 <?php
     include_once('../partials/footer.php');
 ?>
+
+<script>
+
+  $(document).on("click", "#btnRegister", function(e){
+    e.preventDefault();
+    window.location.href = "/ecommerce-php/views/page/register.php";
+  })
+
+</script>
 
 

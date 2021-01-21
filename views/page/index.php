@@ -83,7 +83,7 @@
                 data-endelementdelay="0.1" 
                 data-endspeed="300" 
                 data-scrolloffset="0"
-                style="z-index: 8;"><a href="#." class="btn">BUY NOW</a> </div>
+                style="z-index: 8;"><a href="/ecommerce-php/views/page/shop.php" class="btn">BUY NOW</a> </div>
           </li>
           <?php
             } 
@@ -110,19 +110,19 @@
       <!-- New Arrival -->
       <div class="arrival-block"> 
       <?php
-        $sql_product = mysqli_query($con,"SELECT * FROM tbl_sanpham ORDER BY sanpham_id DESC LIMIT 10");
+        $sql_product = mysqli_query($con,"SELECT * FROM tbl_sanpham ORDER BY sanpham_id DESC LIMIT 8");
         while($row_sanpham = mysqli_fetch_array($sql_product)){ 
           
       ?>
         <!-- Item -->
         <div class="item"> 
           <!-- Images --> 
-          <img class="img-1" src="../../img/<?php echo $row_sanpham['sanpham_image'] ?>" alt=""> <img class="img-2" src="../../public/images/item-img-1-1-1.jpg" alt=""> 
+          <img class="img-1" src="../../img/<?php echo $row_sanpham['sanpham_image'] ?>" alt=""> <img class="img-2" src="../../img/<?php echo $row_sanpham['sanpham_image'] ?>" alt=""> 
           <!-- Overlay  -->
           <div class="overlay"> 
             <!-- Price --> 
             <span class="price"><?php echo $row_sanpham['sanpham_gia'] ?><small>VND</small></span>
-            <div class="position-center-center"> <a href="../../public/images/item-img-1-1.jpg" data-lighter><i class="icon-magnifier"></i></a> </div>
+            <div class="position-center-center"> <a href="../../img/<?php echo $row_sanpham['sanpham_image'] ?>" data-lighter><i class="icon-magnifier"></i></a> </div>
           </div>
           <!-- Item Name -->
           <div class="item-name"> <a href="/ecommerce-php/views/page/product-detail.php?id=<?php echo $row_sanpham["sanpham_id"];?>&cateID=<?php echo $row_sanpham["category_id"];?>""><?php echo $row_sanpham['sanpham_name'] ?></a>
@@ -162,19 +162,19 @@
         ?>
 
         <?php
-          $sql_product = mysqli_query($con,"SELECT * FROM tbl_sanpham WHERE sanpham_hot='1' ORDER BY sanpham_id DESC LIMIT 10");
+          $sql_product = mysqli_query($con,"SELECT * FROM tbl_sanpham WHERE sanpham_hot='1' ORDER BY sanpham_id DESC LIMIT 8");
           while($row_sanpham = mysqli_fetch_array($sql_product)){ 
         ?>
           <!-- Item -->
           <div class="item"> 
             <!-- Item img -->
-            <div class="item-img"> <img class="img-1" src="../../img/<?php echo $row_sanpham['sanpham_image'] ?>" alt="" > <img class="img-2" src="../../public/images/product-2.jpg" alt="" > 
+            <div class="item-img"> <img class="img-1" src="../../img/<?php echo $row_sanpham['sanpham_image'] ?>" alt="" > <img class="img-2" src="../../img/<?php echo $row_sanpham['sanpham_image'] ?>" alt="" > 
               <!-- Overlay -->
               <div class="overlay">
                 <div class="position-center-center">
                   <div class="inn">
                     <form method="POST" enctype="multipart/form-data">
-                      <a href="../../public/images/product-1.jpg" data-lighter>
+                      <a href="../../img/<?php echo $row_sanpham['sanpham_image'] ?>" data-lighter>
                         <i class="icon-magnifier"></i>
                       </a>
                       <a href="/ecommerce-php/views/page/cart.php?id=<?php echo $row_sanpham["sanpham_id"];?>" data-toggle="tooltip" type="submit" name="btnAddToCart" class="btnAddToCart" data-placement="top" title="Add To Cart">
@@ -264,7 +264,7 @@
           </div>
           
           <!-- Img -->
-          <div class="col-sm-6"> <img class="img-responsive" src="../../public/images/testi-avatar.jpg" alt=""> </div>
+          <div class="col-sm-6"> <img class="img-responsive" src="../../img/g.jpg" alt=""> </div>
         </div>
       </div>
     </section>

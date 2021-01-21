@@ -199,7 +199,7 @@
                   </div> -->
                 <!-- </div> -->
               <!-- </li> -->
-              <li> <a href="contact.html"> contact</a> </li>
+              <!-- <li> <a href="contact.html"> contact</a> </li> -->
             </ul>
           </div>
           
@@ -220,14 +220,19 @@
                             $infoUser  = mysqli_fetch_array($user);
                     ?>
                     <h6>HELLO! <?php echo $infoUser['name']; ?></h6>
+                    <li><a href="/ecommerce-php/views/page/login.php" >LOG OUT</a></li>
                   <?php
                         
+                          }else{
+                    ?>
+                    <li><a href="/ecommerce-php/views/page/login.php" >LOG IN</a></li>
+                  <?php
+
                           }
                     ?>
                   </li>
                   <!-- <li><a href="#">MY CART</a></li> -->
                   <!-- <li><a href="#">ACCOUNT INFO</a></li> -->
-                  <li><a href="/ecommerce-php/views/page/login.php" >LOG OUT</a></li>
                 </ul>
               </li>
               
