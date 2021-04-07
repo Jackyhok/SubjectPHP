@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="description" content="">
 <meta name="author" content="M_Adnan">
-<title>PAVSHOP - Multipurpose eCommerce HTML5 Template</title>
+<title>Shop LHB</title>
 
 <!-- SLIDER REVOLUTION 4.x CSS SETTINGS -->
 <link rel="stylesheet" type="text/css" href="../../public/rs-plugin/css/settings.css" media="screen" />
@@ -31,24 +31,12 @@
 <link href='https://fonts.googleapis.com/css?family=Montserrat:400,700' rel='stylesheet' type='text/css'>
 <link href='https://fonts.googleapis.com/css?family=Playfair+Display:400,700,900' rel='stylesheet' type='text/css'>
 
-<!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
-<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
-<!--[if lt IE 9]>
-    <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
-    <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
-<![endif]-->
+
 
 </head>
 <body>
 
-<!-- LOADER -->
-<!-- <div id="loader">
-  <div class="position-center-center">
-    <div class="ldr"></div>
-  </div>
-</div> -->
 
-<!-- Wrap -->
 <?php
  include_once('../../database/db.class.php');
   session_start();
@@ -60,7 +48,7 @@
   <header>
     <div class="sticky">
       <div class="container"> 
-        
+
         <!-- Logo -->
         <div class="logo"> <a href="/ecommerce-php/views/page/index.php"><img class="img-responsive" src="../../public/images/logo.png" alt="" ></a> </div>
         <nav class="navbar ownmenu">
@@ -71,135 +59,15 @@
           <!-- NAV -->
           <div class="collapse navbar-collapse" id="nav-open-btn">
             <ul class="nav">
-              <li class="dropdown active"><a href="/ecommerce-php/views/page/index.php" class="dropdown-toggle" >Home</a>
-                <!-- <ul class="dropdown-menu">
-                  <li> <a href="index.html">Index Default</a> </li>
-                  <li> <a href="index-1.html">Index 2</a> </li>
-                  <li> <a href="index-2.html">Index 3</a></li>
-                  <li> <a href="index-header-1.html">Index Header 1</a></li>
-                  <li> <a href="index-header-2.html">Index Header 2</a></li>
-                  <li> <a href="index-header-3.html">Index Header 3</a></li>
-                  <li> <a href="index-header-4.html">Index Header 4</a></li>
-                </ul> -->
+              <li class="dropdown active"><a href="/ecommerce-php/views/page/index.php" class="dropdown-toggle" >Trang chủ</a>
+                
               </li>
-              <li class="dropdown"> <a href="/ecommerce-php/views/page/shop.php" class="dropdown-toggle">Shop</a>
-                <!-- <ul class="dropdown-menu">
-                  <li> <a href="shop_01.html">Shop 01 </a> </li>
-                  <li> <a href="shop_02.html">Shop 02</a> </li>
-                  <li> <a href="shop_03.html">Shop 03 </a> </li>
-                  <li> <a href="shop_04.html">Shop 04 </a> </li>
-                  <li> <a href="product-detail_01.html">Product Detail 01</a> </li>
-                  <li> <a href="product-detail_02.html">Product Detail 02</a> </li>
-                  <li> <a href="shopping-cart.html">Shopping Cart</a> </li>
-                  <li> <a href="checkout.html">Checkout</a> </li>
-                  <li> <a href="about-us_01.html">About 01</a> </li>
-                  <li> <a href="about-us_02.html">About 02</a> </li>
-                  <li> <a href="contact.html">Contact</a> </li>
-                  <li> <a href="blog-list_01.html">Blog List 01</a> </li>
-                  <li> <a href="blog-list_02.html">Blog List 02</a> </li>
-                  <li> <a href="blog-list_03.html">Blog List 03 </a> </li>
-                  <li> <a href="blog-detail_01.html">Blog Detail 01 </a> </li>
-                </ul> -->
+              <li class="dropdown"> <a href="/ecommerce-php/views/page/shop.php" class="dropdown-toggle">Cửa hàng</a>
+                
               </li>
-              <li> <a href="https://mwg.vn/">About </a> </li>
+              <li> <a href="https://mwg.vn/">Thông tin</a></li>
               
-              <!-- Two Link Option -->
-              <!-- <li class="dropdown"> <a href="#." class="dropdown-toggle" data-toggle="dropdown">Designer</a>
-                <div class="dropdown-menu two-option">
-                  <div class="row">
-                    <ul class="col-sm-6">
-                      <li> <a href="shop_01.html">summer store</a></li>
-                      <li> <a href="shop_01.html"> sarees</a></li>
-                      <li> <a href="shop_01.html"> kurtas</a></li>
-                      <li> <a href="shop_01.html"> shorts & tshirts</a></li>
-                      <li> <a href="shop_01.html"> winter wear</a></li>
-                      <li> <a href="shop_01.html"> jeans</a></li>
-                      <li> <a href="shop_01.html"> bra</a></li>
-                      <li> <a href="shop_01.html"> babydools</a> </li>
-                    </ul>
-                    <ul class="col-sm-6">
-                      <li> <a href="shop_01.html">deodornts</a></li>
-                      <li> <a href="shop_01.html"> skin care</a></li>
-                      <li> <a href="shop_01.html"> make up</a></li>
-                      <li> <a href="shop_01.html"> watch</a></li>
-                      <li> <a href="shop_01.html"> siting bags</a></li>
-                      <li> <a href="shop_01.html"> totes</a></li>
-                      <li> <a href="shop_01.html"> gold rings</a></li>
-                      <li> <a href="shop_01.html"> jewellery</a> </li>
-                    </ul>
-                  </div>
-                </div>
-              </li> -->
-              
-              <!-- MEGA MENU -->
-              <!-- <li class="dropdown megamenu"> <a href="#." class="dropdown-toggle" data-toggle="dropdown">store</a>
-                <div class="dropdown-menu">
-                  <div class="row">  -->
-                    
-                    <!-- Shop Pages -->
-                    <!-- <div class="col-md-3">
-                      <h6>Shop Pages</h6>
-                      <ul>
-                        <li> <a href="shop_01.html">Shop 01 </a> </li>
-                        <li> <a href="shop_02.html">Shop 02</a> </li>
-                        <li> <a href="shop_03.html">Shop 03 </a> </li>
-                        <li> <a href="shop_04.html">Shop 04 </a> </li>
-                        <li> <a href="product-detail_01.html">Product Detail 01</a> </li>
-                        <li> <a href="product-detail_02.html">Product Detail 02</a> </li>
-                        <li> <a href="shopping-cart.html">Shopping Cart</a> </li>
-                        <li> <a href="checkout.html">Checkout</a> </li>
-                      </ul>
-                    </div> -->
-                    
-                    <!-- TOp Rate Products -->
-                    <!-- <div class="col-md-4">
-                      <h6>TOp Rate Products</h6>
-                      <div class="top-rated">
-                        <ul>
-                          <li>
-                            <div class="media-left">
-                              <div class="cart-img"> <a href="#"> <img class="media-object img-responsive" src="../../public/images/cart-img-1.jpg" alt="..."> </a> </div>
-                            </div>
-                            <div class="media-body">
-                              <h6 class="media-heading">WOOD CHAIR</h6>
-                              <div class="stars"> <i class="fa fa-star"></i> <i class="fa fa-star"></i> <i class="fa fa-star"></i> <i class="fa fa-star"></i> <i class="fa fa-star"></i> </div>
-                              <span class="price">129.00 USD</span> </div>
-                          </li>
-                          <li>
-                            <div class="media-left">
-                              <div class="cart-img"> <a href="#"> <img class="media-object img-responsive" src="../../public/images/cart-img-2.jpg" alt="..."> </a> </div>
-                            </div>
-                            <div class="media-body">
-                              <h6 class="media-heading">STOOL</h6>
-                              <div class="stars"> <i class="fa fa-star"></i> <i class="fa fa-star"></i> <i class="fa fa-star"></i> <i class="fa fa-star"></i> <i class="fa fa-star"></i> </div>
-                              <span class="price">129.00 USD</span> </div>
-                          </li>
-                          <li>
-                            <div class="media-left">
-                              <div class="cart-img"> <a href="#"> <img class="media-object img-responsive" src="../../public/images/cart-img-3.jpg" alt="..."> </a> </div>
-                            </div>
-                            <div class="media-body">
-                              <h6 class="media-heading">WOOD SPOON</h6>
-                              <div class="stars"> <i class="fa fa-star"></i> <i class="fa fa-star"></i> <i class="fa fa-star"></i> <i class="fa fa-star"></i> <i class="fa fa-star"></i> </div>
-                              <span class="price">129.00 USD</span> </div>
-                          </li>
-                        </ul>
-                      </div>
-                    </div> -->
-                    
-                    <!-- New Arrival -->
-                    <!-- <div class="col-md-5">
-                      <h5>NEW ARRIVAL 2016 <span>(Best Collection)</span></h5>
-                      <img class="nav-img" src="../../public/images/nav-img.png" alt="" >
-                      <p>Lorem ipsum dolor sit amet,<br>
-                        consectetur adipiscing elit. <br>
-                        Donec faucibus maximus<br>
-                        vehicula.</p>
-                      <a href="#." class="btn btn-small btn-round">SHOP NOW</a> </div>
-                  </div> -->
-                <!-- </div> -->
-              <!-- </li> -->
-              <!-- <li> <a href="contact.html"> contact</a> </li> -->
+            
             </ul>
           </div>
           
@@ -220,12 +88,12 @@
                             $infoUser  = mysqli_fetch_array($user);
                     ?>
                     <h6>HELLO! <?php echo $infoUser['name']; ?></h6>
-                    <li><a href="/ecommerce-php/views/page/login.php" >LOG OUT</a></li>
+                    <li><a href="/ecommerce-php/views/page/login.php" >Đăng xuất</a></li>
                   <?php
                         
                           }else{
                     ?>
-                    <li><a href="/ecommerce-php/views/page/login.php" >LOG IN</a></li>
+                    <li><a href="/ecommerce-php/views/page/login.php" >Đăng nhập</a></li>
                   <?php
 
                           }
@@ -257,21 +125,21 @@
                     </div>
                     <div class="media-body">
                       <h6 class="media-heading"><?php echo $prod['sanpham_name']; ?></h6>
-                      <span class="price"><?php echo $prod['sanpham_gia']; ?> VND</span> <span class="qty">QTY: <?php echo $item["quantity"]; ?></span> </div>
+                      <span class="price"><?php echo $prod['sanpham_gia']; ?> VND</span> <span class="qty">Số lượng: <?php echo $item["quantity"]; ?></span> </div>
                   </li>
                   <?php
                       }
                     }else{
-                        echo "Khong co san pham nao trong gio hang";
+                        echo "Không có sản phẩm trong giỏ hàng";
                     }
                   ?>
                   
                   <li>
-                    <h5 class="text-center">SUBTOTAL: <?php echo $total_money; ?> USD</h5>
+                    <h5 class="text-center">Tổng tiền: <?php echo $total_money; ?> USD</h5>
                   </li>
                   <li class="margin-0">
                     <div class="row">
-                      <div class="col-xs-6"> <a href="/ecommerce-php/views/page/cart.php" class="btn">VIEW CART</a></div>
+                      <div class="col-xs-6"> <a href="/ecommerce-php/views/page/cart.php" class="btn">Xem giỏ hàng</a></div>
                       <?php
                           $username = "";
                           if(isset($_SESSION['user']) != ""){

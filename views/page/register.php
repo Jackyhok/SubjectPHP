@@ -5,13 +5,12 @@
 <section class="sub-bnr" data-stellar-background-ratio="0.5" style="background-position: 0% 281px;">
     <div class="position-center-center">
       <div class="container">
-        <h4>REGISTER</h4>
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec faucibus maximus vehicula. 
-          Sed feugiat, tellus vel tristique posuere, diam</p>
+        <h4>Trang đăng ký</h4>
+        <p>-----------------</p>
         <ol class="breadcrumb">
-          <li><a href="#">Home</a></li>
-          <li><a href="#">Pages</a></li>
-          <li class="active">REGISTER</li>
+          <li><a href="#">Trang chủ</a></li>
+          <li><a href="#">Cửa hàng</a></li>
+          <li class="active">Trang đăng ký</li>
         </ol>
       </div>
     </div>
@@ -31,7 +30,7 @@
               
               <!-- ESTIMATE SHIPPING & TAX -->
               <div class="col-sm-12">
-                <h6>REGISTER</h6>
+                <h6>Trang đăng ký</h6>
                 <?php
                 
                 if(isset($_POST['btnRegister'])){
@@ -78,39 +77,39 @@
                     
                     <!-- Name -->
                     <li class="col-md-6">
-                      <label> *EMAIL ADDRESS
+                      <label> *Địa chỉ email
                         <input type="text" name="txtEmail" value="" placeholder="">
                       </label>
                     </li>
                     <!-- LAST NAME -->
                     <li class="col-md-6">
-                      <label> *PASSWORD
+                      <label> *Mật khẩu
                         <input type="password" name="txtPassword" value="" placeholder="">
                       </label>
                     </li>
 
                     <li class="col-md-6">
-                      <label> *COMFIRM PASSWORD
+                      <label> *Nhập lại mật khẩu
                         <input type="password" name="txtPassword2" value="" placeholder="">
                       </label>
                     </li>
 
-                    <!-- EMAIL ADDRESS -->
+                    
                     <li class="col-md-6">
-                      <label> *NAME
+                      <label> *Họ tên
                         <input type="text" name="txtName" value="" placeholder="">
                       </label>
                     </li>
-                    <!-- PHONE -->
+                    <!-- PHONE -->    
                     <li class="col-md-6">
-                      <label> *PHONE
+                      <label> *Số điện thoại
                         <input type="text" name="txtPhone" value="" placeholder="">
                       </label>
                     </li>
                     
                     <!-- LAST NAME -->
                     <li class="col-md-6">
-                      <label> *ADDRESS
+                      <label> *Địa chỉ
                         <input type="text" name="txtAddress" value="" placeholder="">
                       </label>
                     </li>
@@ -119,7 +118,7 @@
                     <li class="col-md-6">
                     </li>
                   </ul>
-                  <button type="submit" id="btnRegister" name="btnRegister" class="btn">REGISTER NOW</button>
+                  <button type="submit" id="btnRegister" name="btnRegister" class="btn">Đăng ký ngay</button>
                   <!-- <script>
                     $(document).on("click", "#btnRegister", function(e){
                       e.preventDefault();
@@ -139,9 +138,8 @@
         
         <!-- Main Heading -->
         <div class="heading text-center">
-          <h4>about PAVSHOP</h4>
-          <p>Phasellus lacinia fermentum bibendum. Interdum et malesuada fames ac ante ipsumien lacus, eu posuere odio luctus non. Nulla lacinia,
-            eros vel fermentum consectetur, risus purus tempc, et iaculis odio dolor in ex. </p>
+          <h4>Về LHB</h4>
+          <p>Sáng lập bởi 3 sinh viên Long Hưng Bằng</p>
         </div>
         
         <!-- Social Icons -->
@@ -155,18 +153,7 @@
       </div>
     </section>
     
-    <!-- News Letter -->
-    <section class="news-letter padding-top-150 padding-bottom-150">
-      <div class="container">
-        <div class="heading light-head text-center margin-bottom-30">
-          <h4>NEWSLETTER</h4>
-          <span>Phasellus lacinia fermentum bibendum. Interdum et malesuada fames ac ante ipsumien lacus, eu posuere odi </span> </div>
-        <form>
-          <input type="email" placeholder="Enter your email address" required="">
-          <button type="submit">SEND ME</button>
-        </form>
-      </div>
-    </section>
+
 </div>
 <?php
     include_once('../partials/footer.php');
