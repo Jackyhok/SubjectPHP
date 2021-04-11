@@ -6,13 +6,13 @@
 <section class="sub-bnr" data-stellar-background-ratio="0.5" style="background-position: 0% -69px;">
     <div class="position-center-center">
       <div class="container">
-        <h4>CHECKOUT</h4>
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec faucibus maximus vehicula. 
-          Sed feugiat, tellus vel tristique posuere, diam</p>
+        <h4>Thanh toán</h4>
+        <p>-----------------</p>
         <ol class="breadcrumb">
-          <li><a href="#">Home</a></li>
-          <li><a href="#">SHOP</a></li>
-          <li class="active">CHECKOUT</li>
+            <li><a href="#">Trang chủ</a></li>
+            <li><a href="#">Cửa hàng</a></li>
+            <li class="active">Trang thanh toán</li>
+        </ol>
         </ol>
       </div>
     </div>
@@ -33,7 +33,7 @@
               
               <!-- ESTIMATE SHIPPING & TAX -->
               <div class="col-sm-7">
-                <h6>BILLING DETAILS</h6>
+                <h6>Thông tin khách hàng</h6>
                 <?php
                     $username = "";
                     $infoUser;
@@ -54,115 +54,26 @@
                     </li>
                     <!-- LAST NAME -->
                     <li class="col-md-6">
-                      <label> *PHONE
+                      <label> *Số điện thoại
                         <input type="text" value="<?php echo $infoUser['phone']; ?>" name="last-name" value="" placeholder="">
                       </label>
                     </li>
                     <li class="col-md-6"> 
                       <!-- COMPANY NAME -->
-                      <label> *ADDRESS
+                      <label> *Địa chỉ
                         <input type="text" value="<?php echo $infoUser['address']; ?>"  name="company" value="" placeholder="">
                       </label>
                     </li>
-                    <!-- <li class="col-md-6"> 
-                      <label>*ADDRESS
-                        <input type="text" name="address" value="" placeholder="">
-                      </label>
-                    </li>
-                    <li class="col-md-6">
-                      <label>*TOWN/CITY
-                        <input type="text" name="town" value="" placeholder="">
-                      </label>
-                    </li>
                     
-                    <li class="col-md-6">
-                      <label> COUNTRY
-                        <input type="text" name="contry-state" value="" placeholder="">
-                      </label>
-                    </li>
-                    
-                    <li class="col-md-6">
-                      <label> *EMAIL ADDRESS
-                        <input type="text" name="contry-state" value="" placeholder="">
-                      </label>
-                    </li>
-                    <li class="col-md-6">
-                      <label> *PHONE
-                        <input type="text" name="postal-code" value="" placeholder="">
-                      </label>
-                    </li>
-                    
-                    <li class="col-md-6">
-                      <button type="submit" class="btn">continue</button>
-                    </li>
-                    
-                    <li class="col-md-6">
-                      <div class="checkbox margin-0 margin-top-20">
-                        <input id="checkbox1" class="styled" type="checkbox">
-                        <label for="checkbox1"> Ship to a different address </label>
-                      </div>
-                    </li> -->
                   </ul>
                 </form>
                 
-                <!-- SHIPPING info -->
-                <!-- <h6 class="margin-top-50">SHIPPING info</h6>
-                <form>
-                  <ul class="row">
-                    
-                    <li class="col-md-6">
-                      <label> *FIRST NAME
-                        <input type="text" name="first-name" value="" placeholder="">
-                      </label>
-                    </li>
-                    <li class="col-md-6">
-                      <label> *LAST NAME
-                        <input type="text" name="last-name" value="" placeholder="">
-                      </label>
-                    </li>
-                    <li class="col-md-6"> 
-                      <label>COMPANY NAME
-                        <input type="text" name="company" value="" placeholder="">
-                      </label>
-                    </li>
-                    <li class="col-md-6"> 
-                      <label>*ADDRESS
-                        <input type="text" name="address" value="" placeholder="">
-                      </label>
-                    </li>
-                    <li class="col-md-6">
-                      <label>*TOWN/CITY
-                        <input type="text" name="town" value="" placeholder="">
-                      </label>
-                    </li>
-                    
-                    <li class="col-md-6">
-                      <label> COUNTRY
-                        <input type="text" name="contry-state" value="" placeholder="">
-                      </label>
-                    </li>
-                    
-                    <li class="col-md-6">
-                      <label> *EMAIL ADDRESS
-                        <input type="text" name="contry-state" value="" placeholder="">
-                      </label>
-                    </li>
-                    <li class="col-md-6">
-                      <label> *PHONE
-                        <input type="text" name="postal-code" value="" placeholder="">
-                      </label>
-                    </li>
-                    
-                    <li class="col-md-6">
-                      <button type="submit" class="btn">SUBMIT</button>
-                    </li>
-                  </ul>
-                </form> -->
+                
               </div>
               
               <!-- SUB TOTAL -->
               <div class="col-sm-5">
-                <h6>YOUR ORDER</h6>
+                <h6>Đơn đặt hàng</h6>
                 <div class="order-place">
                   <div class="order-detail">
                   <?php
@@ -180,48 +91,31 @@
                     <?php
                             }
                         }else{
-                            echo "Khong co san pham nao trong gio hang";
+                            echo "Không có sản phẩm trong giỏ";
                         }
                     ?>
                     
                     <!-- SUB TOTAL -->
-                    <p class="all-total">TOTAL COST <span> <?php echo $total_money; ?> VND</span></p>
+                    <p class="all-total">TỔNG TIỀN <span> <?php echo $total_money; ?> VND</span></p>
                   </div>
                   <div class="pay-meth">
                     <ul>
                       <li>
                         <div class="radio">
                           <input type="radio" name="radio1" id="radio1" value="option1" checked="">
-                          <label for="radio1"> DIRECT BANK TRANSFER </label>
+                          <label for="radio1"> THANH TOÁN TRỰC TUYẾN </label>
                         </div>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam erat turpis, pellentesque non leo eget, pulvinar pretium arcu. Mauris porta elit non.</p>
+                        <p></p>
                       </li>
-                      <!-- <li>
-                        <div class="radio">
-                          <input type="radio" name="radio1" id="radio2" value="option2">
-                          <label for="radio2"> CASH ON DELIVERY</label>
-                        </div>
-                      </li>
-                      <li>
-                        <div class="radio">
-                          <input type="radio" name="radio1" id="radio3" value="option3">
-                          <label for="radio3"> CHEQUE PAYMENT </label>
-                        </div>
-                      </li>
-                      <li>
-                        <div class="radio">
-                          <input type="radio" name="radio1" id="radio4" value="option4">
-                          <label for="radio4"> PAYPAL </label>
-                        </div>
-                      </li> -->
+                      
                       <li>
                         <div class="checkbox">
                           <input id="checkbox3-4" class="styled" type="checkbox">
-                          <label for="checkbox3-4"> I’VE READ AND ACCEPT THE <span class="color"> TERMS &amp; CONDITIONS </span> </label>
+                          <label for="checkbox3-4"> Tôi đã đọc <span class="color"> điều khoản &amp; điều kiện </span> </label>
                         </div>
                       </li>
                     </ul>
-                    <a class="btn  btn-dark pull-right margin-top-30 btnOrder">PLACE ORDER</a> </div>
+                    <a class="btn  btn-dark pull-right margin-top-30 btnOrder">Đặt hàng</a> </div>
                 </div>
               </div>
             </div>
@@ -236,9 +130,8 @@
         
         <!-- Main Heading -->
         <div class="heading text-center">
-          <h4>about PAVSHOP</h4>
-          <p>Phasellus lacinia fermentum bibendum. Interdum et malesuada fames ac ante ipsumien lacus, eu posuere odio luctus non. Nulla lacinia,
-            eros vel fermentum consectetur, risus purus tempc, et iaculis odio dolor in ex. </p>
+          <h4>Về LHB</h4>
+          <p>Sáng lập bởi 3 sinh viên Long Hưng Bằng</p>
         </div>
         
         <!-- Social Icons -->
@@ -252,18 +145,7 @@
       </div>
     </section>
     
-    <!-- News Letter -->
-    <section class="news-letter padding-top-150 padding-bottom-150">
-      <div class="container">
-        <div class="heading light-head text-center margin-bottom-30">
-          <h4>NEWSLETTER</h4>
-          <span>Phasellus lacinia fermentum bibendum. Interdum et malesuada fames ac ante ipsumien lacus, eu posuere odi </span> </div>
-        <form>
-          <input type="email" placeholder="Enter your email address" required="">
-          <button type="submit">SEND ME</button>
-        </form>
-      </div>
-    </section>
+    
 </div>
 
 <?php

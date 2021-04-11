@@ -97,33 +97,23 @@ p.success-lrg {
 		<div id="authenticationPopup" data-bind="scope:'authenticationPopup'">
 			<div class="success-extras">
 				<i class="far fa-check-circle"></i>
-				<p>Thanks for your order!</p>
+				<p>Cảm ơn đã đặt hàng tại shop!</p>
 				<p class="success-lrg">
-					Sit back, relax or even better...go for a run! We'll take care of the rest.
+					Nghỉ ngơi và chúng tôi sẽ thực hiện những việc còn lại ...
 				</p>
 				<hr class="divider">
 			</div>
 		</div>
 		<div class="checkout-success">
-			<p>Your order # is: <span>000166954</span>.</p>
-			<p>We'll email you an order confirmation with details and tracking info.</p>
+			<p>Hóa đơn của bạn : <span>000166954</span>.</p>
+			<p>Chúng tôi sẽ gửi email để xác nhận</p>
 			<div class="actions-toolbar">
 				<div class="primary">
-					<a class="action primary continue" href="/ecommerce-php/views/page/index.php">Continue Shopping</a>
+					<a class="action primary continue" href="/ecommerce-php/views/page/index.php">Tiếp tục mua hàng</a>
 				</div>
 			</div>
 		</div>
-		<!-- <div id="registration" data-bind="scope:'registration'">
-			<br>
-			<div data-role="checkout-messages" class="messages" data-bind="visible: isVisible(), click: removeAll"></div>
-			<div>
-				<p data-bind="i18n: 'You can track your order status by creating an account.'">You can track your order status by creating an account.</p>
-				<p><span data-bind="i18n: 'Email Address'">Email Address</span>: <span data-bind="text: getEmailAddress()">test@test.co</span></p>
-				<form method="get" data-bind="attr: { action: getUrl() }" action="https://run4it-225.thesixbysix.co.uk/checkout/account/delegateCreate/">
-					<input type="submit" class="action primary" data-bind="value: $t('Create an Account')" value="Create an Account">
-				</form>
-			</div>
-		</div> -->
+				
 	</div>
 </div>
 <?php

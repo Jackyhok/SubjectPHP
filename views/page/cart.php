@@ -5,13 +5,12 @@
 <section class="sub-bnr" data-stellar-background-ratio="0.5" style="background-position: 0% 6.2px;">
     <div class="position-center-center">
         <div class="container">
-        <h4>SHOPPING CART</h4>
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec faucibus maximus vehicula. 
-            Sed feugiat, tellus vel tristique posuere, diam</p>
+        <h4>Giỏ hàng</h4>
+        <p>-----------------</p>
         <ol class="breadcrumb">
-            <li><a href="#">Home</a></li>
-            <li><a href="#">SHOP</a></li>
-            <li class="active">SHOPPING CART</li>
+            <li><a href="#">Trang chủ</a></li>
+            <li><a href="#">Cửa hàng</a></li>
+            <li class="active">Trang giỏ hàng </li>
         </ol>
         </div>
     </div>
@@ -27,24 +26,24 @@
             <ul class="row">
               <!-- PRODUCTS -->
               <li class="col-sm-2 text-left">
-                <h6>PRODUCTS</h6>
+                <h6>Sản phẩm</h6>
               </li>
               <!-- NAME -->
               <li class="col-sm-4 text-left">
-                <h6>NAME</h6>
+                <h6>Tên sản phẩm</h6>
               </li>
               <!-- PRICE -->
               <li class="col-sm-2">
-                <h6>PRICE</h6>
+                <h6>Giá</h6>
               </li>
               <!-- QTY -->
               <li class="col-sm-1">
-                <h6>QTY</h6>
+                <h6>Số lượng</h6>
               </li>
               
               <!-- TOTAL PRICE -->
               <li class="col-sm-2">
-                <h6>TOTAL</h6>
+                <h6>Tổng cộng </h6>
               </li>
               <li class="col-sm-1"> </li>
             </ul>
@@ -162,7 +161,7 @@
           <?php
                 }
             }else{
-                echo "Khong co san pham nao trong gio hang";
+                echo "không có sản phẩm trong giỏ hàng";
             }
             ?>
         </div>
@@ -179,17 +178,17 @@
             
             <!-- DISCOUNT CODE -->
             <div class="col-sm-7">
-              <h6>DISCOUNT CODE</h6>
+              <h6>Mã giảm giá</h6>
               <form>
-                <input type="text" value="" placeholder="ENTER YOUR CODE IF YOU HAVE ONE">
-                <button type="submit" class="btn btn-small btn-dark">APPLY CODE</button>
+                <input type="text" value="" placeholder="Nhập mã nếu bạn có">
+                <button type="submit" class="btn btn-small btn-dark">Áp dụng</button>
               </form>
-              <div class="coupn-btn"> <a href="#." class="btn">continue shopping</a> <a href="#." class="btn">update cart</a> </div>
+              <div class="coupn-btn"> <a href="#." class="btn">Tiếp tục mua hàng</a> <a href="#." class="btn">Cập nhật giỏ hàng </a> </div>
             </div>
            
             <!-- SUB TOTAL -->
             <div class="col-sm-5">
-              <h6>grand total</h6>
+              <h6>Thành tiền</h6>
               <div class="grand-total">
                 <div class="order-detail">
                 <?php
@@ -207,11 +206,11 @@
                 <?php
                         }
                     }else{
-                        echo "Khong co san pham nao trong gio hang";
+                        echo "không có sản phẩm trong giỏ hàng";
                     }
                 ?>
                   <!-- SUB TOTAL -->
-                  <p class="all-total">TOTAL COST <span> <?php echo $total_money; ?> VND</span></p>
+                  <p class="all-total">TỔNG TIỀN <span> <?php echo $total_money; ?> VND</span></p>
                 </div>
               </div>
             </div>
@@ -226,9 +225,8 @@
         
         <!-- Main Heading -->
         <div class="heading text-center">
-          <h4>about PAVSHOP</h4>
-          <p>Phasellus lacinia fermentum bibendum. Interdum et malesuada fames ac ante ipsumien lacus, eu posuere odio luctus non. Nulla lacinia,
-            eros vel fermentum consectetur, risus purus tempc, et iaculis odio dolor in ex. </p>
+        <h4>Về LHB</h4>
+          <p>Sáng lập bởi 3 sinh viên Long Hưng Bằng</p>
         </div>
         
         <!-- Social Icons -->
@@ -242,18 +240,7 @@
       </div>
     </section>
     
-    <!-- News Letter -->
-    <section class="news-letter padding-top-150 padding-bottom-150">
-      <div class="container">
-        <div class="heading light-head text-center margin-bottom-30">
-          <h4>NEWSLETTER</h4>
-          <span>Phasellus lacinia fermentum bibendum. Interdum et malesuada fames ac ante ipsumien lacus, eu posuere odi </span> </div>
-        <form>
-          <input type="email" placeholder="Enter your email address" required="">
-          <button type="submit">SEND ME</button>
-        </form>
-      </div>
-    </section>
+    
 </div>
 <?php
     include_once('../partials/footer.php');

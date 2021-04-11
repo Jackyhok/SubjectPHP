@@ -52,7 +52,7 @@
         <!-- Logo -->
         <div class="logo"> <a href="/ecommerce-php/views/page/index.php"><img class="img-responsive" src="../../public/images/logo.png" alt="" ></a> </div>
         <nav class="navbar ownmenu">
-          <div class="navbar-header">
+          <div class="navbar-header">     
             <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#nav-open-btn" aria-expanded="false"> <span class="sr-only">Toggle navigation</span> <span class="icon-bar"><i class="fa fa-navicon"></i></span> </button>
           </div>
           

@@ -32,7 +32,7 @@
                 data-elementdelay="0.1" 
                 data-endelementdelay="0.1" 
                 data-endspeed="300" 
-                style="z-index: 7; font-size:18px; color:#fff; max-width: auto; max-height: auto; white-space: nowrap;">The Latest Product from PAVSHOP</div>
+                style="z-index: 7; font-size:18px; color:#fff; max-width: auto; max-height: auto; white-space: nowrap;">Sản phẩm mới nhất của LHB SHop</div>
             <!-- LAYER NR. 2 -->
             <div class="tp-caption sfr font-regular tp-resizeme letter-space-4" 
                 data-x="center" data-hoffset="0" 
@@ -45,7 +45,7 @@
                 data-elementdelay="0.07" 
                 data-endelementdelay="0.1" 
                 data-endspeed="300" 
-                style="z-index: 6; font-size:78px; color:#fff; text-transform:uppercase; white-space: nowrap;">look beautiful </div>
+                style="z-index: 6; font-size:78px; color:#fff; text-transform:uppercase; white-space: nowrap;">nhìn đẹp </div>
             <!-- LAYER NR. 2 -->
             <div class="tp-caption sfr font-extra-bold tp-resizeme letter-space-4" 
                 data-x="center" data-hoffset="0" 
@@ -58,7 +58,7 @@
                 data-elementdelay="0.07" 
                 data-endelementdelay="0.1" 
                 data-endspeed="300" 
-                style="z-index: 6; font-size:140px; color:#fff; text-transform:uppercase; white-space: nowrap;">this season </div>
+                style="z-index: 6; font-size:140px; color:#fff; text-transform:uppercase; white-space: nowrap;">mùa này </div>
             <!-- LAYER NR. 4 -->
             <div class="tp-caption sfb font-extra-bold tp-resizeme" 
                 data-x="center" data-hoffset="120"
@@ -83,7 +83,7 @@
                 data-endelementdelay="0.1" 
                 data-endspeed="300" 
                 data-scrolloffset="0"
-                style="z-index: 8;"><a href="/ecommerce-php/views/page/shop.php" class="btn">BUY NOW</a> </div>
+                style="z-index: 8;"><a href="/ecommerce-php/views/page/shop.php" class="btn">Mua ngay</a> </div>
           </li>
           <?php
             } 
@@ -92,7 +92,7 @@
       </div>
     </div>
   </section>
-  
+            
   <!-- Content -->
   <div id="content"> 
     
@@ -102,9 +102,8 @@
         
         <!-- Main Heading -->
         <div class="heading text-center">
-          <h4>new arrival</h4>
-          <span>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec faucibus maximus vehicula. 
-          Sed feugiat, tellus vel tristique posuere, diam</span> </div>
+          <h4>Sản phẩm MỚI</h4>
+          <span>----------------</span> </div>
       </div>
       
       <!-- New Arrival -->
@@ -143,9 +142,8 @@
         
         <!-- Main Heading -->
         <div class="heading text-center">
-          <h4>popular products</h4>
-          <span>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec faucibus maximus vehicula. 
-          Sed feugiat, tellus vel tristique posuere, diam</span> </div>
+          <h4>Sản phẩm HOT</h4>
+          <span>----------------</span> </div>
         
         <!-- Popular Item Slide -->
         <div class="papular-block block-slide"> 
@@ -204,70 +202,7 @@
       </div>
     </section>
     
-    <!-- Knowledge Share -->
-    <section class="light-gray-bg padding-top-150 padding-bottom-150">
-      <div class="container"> 
-        
-        <!-- Main Heading -->
-        <div class="heading text-center">
-          <h4>knowledge share</h4>
-          <span>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec faucibus maximus vehicula. 
-          Sed feugiat, tellus vel tristique posuere, diam</span> </div>
-        <div class="knowledge-share">
-          <ul class="row">
-            
-            <!-- Post 1 -->
-            <li class="col-md-6">
-              <div class="date"> <span>December</span> <span class="huge">27</span> </div>
-              <a href="#.">Donec commo is vulputate</a>
-              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec faucibus maximus vehicula. Sed feugiat, tellus vel tristique posuere, diam</p>
-              <span>By <strong>Admin</strong></span> </li>
-            
-            <!-- Post 2 -->
-            <li class="col-md-6">
-              <div class="date"> <span>December</span> <span class="huge">09</span> </div>
-              <a href="#.">Donec commo is vulputate</a>
-              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec faucibus maximus vehicula. Sed feugiat, tellus vel tristique posuere, diam</p>
-              <span>By <strong>Admin</strong></span> </li>
-          </ul>
-        </div>
-      </div>
-    </section>
     
-    <!-- Testimonial -->
-    <section class="testimonial padding-top-100">
-      <div class="container">
-        <div class="row">
-          <div class="col-sm-6"> 
-            
-            <!-- SLide -->
-            <div class="single-slide"> 
-              
-              <!-- Slide -->
-              <div class="testi-in"> <i class="fa fa-quote-left"></i>
-                <p>Phasellus lacinia fermentum bibendum. Interdum et malesuada fames ac ante ipsum primis in faucibus. Sed ullamcorper sapien lacus, eu posuere odio luctus non. Nulla lacinia, eros vel fermentum consectetur, risus p</p>
-                <h5>john smith</h5>
-              </div>
-              
-              <!-- Slide -->
-              <div class="testi-in"> <i class="fa fa-quote-left"></i>
-                <p>Phasellus lacinia fermentum bibendum. Interdum et malesuada fames ac ante ipsum primis in faucibus. Sed ullamcorper sapien lacus, eu posuere odio luctus non. Nulla lacinia, eros vel fermentum consectetur, risus p</p>
-                <h5>john smith</h5>
-              </div>
-              
-              <!-- Slide -->
-              <div class="testi-in"> <i class="fa fa-quote-left"></i>
-                <p>Phasellus lacinia fermentum bibendum. Interdum et malesuada fames ac ante ipsum primis in faucibus. Sed ullamcorper sapien lacus, eu posuere odio luctus non. Nulla lacinia, eros vel fermentum consectetur, risus p</p>
-                <h5>john smith</h5>
-              </div>
-            </div>
-          </div>
-          
-          <!-- Img -->
-          <div class="col-sm-6"> <img class="img-responsive" src="../../img/g.jpg" alt=""> </div>
-        </div>
-      </div>
-    </section>
     
     <!-- About -->
     <section class="small-about padding-top-150 padding-bottom-150">
@@ -275,9 +210,8 @@
         
         <!-- Main Heading -->
         <div class="heading text-center">
-          <h4>about PAVSHOP</h4>
-          <p>Phasellus lacinia fermentum bibendum. Interdum et malesuada fames ac ante ipsumien lacus, eu posuere odio luctus non. Nulla lacinia,
-            eros vel fermentum consectetur, risus purus tempc, et iaculis odio dolor in ex. </p>
+          <h4>Về LHB</h4>
+          <p>Sáng lập bởi 3 sinh viên Long Hưng Bằng</p>
         </div>
         
         <!-- Social Icons -->
@@ -290,17 +224,7 @@
         </ul>
       </div>
     </section>
-    <section class="news-letter padding-top-150 padding-bottom-150">
-      <div class="container">
-        <div class="heading light-head text-center margin-bottom-30">
-          <h4>NEWSLETTER</h4>
-          <span>Phasellus lacinia fermentum bibendum. Interdum et malesuada fames ac ante ipsumien lacus, eu posuere odi </span> </div>
-        <form>
-          <input type="email" placeholder="Enter your email address" required>
-          <button type="submit">SEND ME</button>
-        </form>
-      </div>
-    </section>
+    
   </div>
   <?php
       include_once('../partials/footer.php');
