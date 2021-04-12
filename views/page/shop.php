@@ -41,15 +41,15 @@
               <!-- FILTER BY PRICE -->
               <h5 class="shop-tittle margin-top-60 margin-bottom-30">Lọc theo giá</h5>
               <ul class="shop-tags">
-                <li><input type="radio" id="ckPrice" name="filerPrice" value="0" style="margin: .4rem;"><label style="font: 1.5rem 'Fira Sans', sans-serif;" >500.000 - 1.000.000 VND</label></li>
-                <li><input type="radio" id="ckPrice" name="filerPrice" value="1" style="margin: .4rem;"><label style="font: 1.5rem 'Fira Sans', sans-serif;" >1.000.000 - 1.500.000 VND</label></li>
-                <li><input type="radio" id="ckPrice" name="filerPrice" value="2" style="margin: .4rem;"><label style="font: 1.5rem 'Fira Sans', sans-serif;" >1.500.000 - 2.000.000 VND</label></li>
+                <li><input type="radio" id="ckPrice" name="filerPrice" value="0" style="margin: .4rem;"><label style="font: 1.5rem 'Fira Sans', sans-serif;" >0 - 500.000 VND</label></li>
+                <li><input type="radio" id="ckPrice" name="filerPrice" value="1" style="margin: .4rem;"><label style="font: 1.5rem 'Fira Sans', sans-serif;" >500.000 - 1.000.000 VND</label></li>
+                <li><input type="radio" id="ckPrice" name="filerPrice" value="2" style="margin: .4rem;"><label style="font: 1.5rem 'Fira Sans', sans-serif;" >1.000.000 - 2.000.000 VND</label></li>
                 <li><input type="radio" id="ckPrice" name="filerPrice" value="3" style="margin: .4rem;"><label style="font: 1.5rem 'Fira Sans', sans-serif;" > > 2.000.000 VND</label></li>
               </ul>
              
               <!-- SIDE BACR BANER -->
               <div class="side-bnr margin-top-50"> <img class="img-responsive" src="../../img/air-zoom-pegasus-37-running-shoe-mwrTCc.jpg" alt="">
-                <div class="position-center-center"> <span class="price">1200000<small>VND</small></span>
+                <div class="position-center-center"> <span class="price">1.200.000<small>VND</small></span>
                   <div class="bnr-text">look
                     hot
                     with
@@ -94,14 +94,14 @@
                     <p><?php echo $row_sanpham['sanpham_mota'] ?></p>
                   </div>
                   <!-- Price --> 
-                  <span class="price"><?php echo $row_sanpham['sanpham_gia'] ?><small>VND</small>  </div>
+                  <span class="price"><?php echo number_format($row_sanpham['sanpham_gia'], 0, '', '.') ?><small>VND</small>  </div>
               </div>
             <?php
                 } 
             ?>
             
             <?php
-                $sql_product = mysqli_query($con,"SELECT * FROM tbl_sanpham WHERE sanpham_gia > 500000 AND sanpham_gia < 1000000 ORDER BY sanpham_id DESC");
+                $sql_product = mysqli_query($con,"SELECT * FROM tbl_sanpham WHERE sanpham_gia > 0 AND sanpham_gia < 500000 ORDER BY sanpham_id DESC");
                 while($row_sanpham = mysqli_fetch_array($sql_product)){ 
             ?>
               <!-- Item -->
@@ -124,14 +124,14 @@
                     <p><?php echo $row_sanpham['sanpham_mota'] ?></p>
                   </div>
                   <!-- Price --> 
-                  <span class="price"><?php echo $row_sanpham['sanpham_gia'] ?><small>VND</small>  </div>
+                  <span class="price"><?php echo number_format($row_sanpham['sanpham_gia'], 0, '', '.')  ?><small>VND</small>  </div>
               </div>
             <?php
                 } 
             ?>
               
             <?php
-                $sql_product = mysqli_query($con,"SELECT * FROM tbl_sanpham WHERE sanpham_gia > 1000000 AND sanpham_gia < 1500000 ORDER BY sanpham_id DESC");
+                $sql_product = mysqli_query($con,"SELECT * FROM tbl_sanpham WHERE sanpham_gia > 500000 AND sanpham_gia < 1000000 ORDER BY sanpham_id DESC");
                 while($row_sanpham = mysqli_fetch_array($sql_product)){ 
             ?>
               <!-- Item -->
@@ -154,14 +154,14 @@
                     <p><?php echo $row_sanpham['sanpham_mota'] ?></p>
                   </div>
                   <!-- Price --> 
-                  <span class="price"><?php echo $row_sanpham['sanpham_gia'] ?><small>VND</small>  </div>
+                  <span class="price"><?php echo number_format($row_sanpham['sanpham_gia'], 0, '', '.')  ?><small>VND</small>  </div>
               </div>
             <?php
                 } 
             ?>
 
             <?php
-                $sql_product = mysqli_query($con,"SELECT * FROM tbl_sanpham WHERE sanpham_gia > 1500000 AND sanpham_gia < 2000000 ORDER BY sanpham_id DESC");
+                $sql_product = mysqli_query($con,"SELECT * FROM tbl_sanpham WHERE sanpham_gia > 1000000 AND sanpham_gia < 2000000 ORDER BY sanpham_id DESC");
                 while($row_sanpham = mysqli_fetch_array($sql_product)){ 
             ?>
               <!-- Item -->
@@ -184,7 +184,7 @@
                     <p><?php echo $row_sanpham['sanpham_mota'] ?></p>
                   </div>
                   <!-- Price --> 
-                  <span class="price"><?php echo $row_sanpham['sanpham_gia'] ?><small>VND</small>  </div>
+                  <span class="price"><?php echo number_format($row_sanpham['sanpham_gia'], 0, '', '.')?><small>VND</small>  </div>
               </div>
             <?php
                 } 
@@ -214,7 +214,8 @@
                     <p><?php echo $row_sanpham['sanpham_mota'] ?></p>
                   </div>
                   <!-- Price --> 
-                  <span class="price"><?php echo $row_sanpham['sanpham_gia'] ?><small>VND</small>  </div>
+                  <span class="price"><?php echo number_format($row_sanpham['sanpham_gia'], 0, '', '.') 
+                   ?><small>VND</small>  </div>
               </div>
             <?php
                 } 

@@ -6,12 +6,12 @@
 <section class="sub-bnr" data-stellar-background-ratio="0.5" style="background-position: 0% 102.6px;">
     <div class="position-center-center">
       <div class="container">
-        <h4>WOOD CHAIR</h4>
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec faucibus maximus vehicula. 
-          Sed feugiat, tellus vel tristique posuere, diam</p>
+      <h4>Trang chi tiết sản phẩm</h4>
+        <p>-----------------</p>
         <ol class="breadcrumb">
-          <li><a href="#">Home</a></li>
-          <li class="active">Data</li>
+          <li><a href="#">Trang chủ</a></li>
+          <li><a href="#">Cửa hàng</a></li>
+          <li class="active">Trang chi tiết</li>
         </ol>
       </div>
     </div>
@@ -31,7 +31,7 @@
         // $prodCate           = mysqli_fetch_array($productOfCate);
 
     ?>
-    <!-- Popular Products -->
+    <!-- sản phẩm nổi -->
     <section class="padding-top-100 padding-bottom-100">
       <div class="container"> 
         
@@ -61,8 +61,8 @@
               <!-- Sale Tags -->
               <div class="on-sale"> <?php echo round(100 - $prod['sanpham_giakhuyenmai'] / $prod['sanpham_gia'] * 100)  ?>% <span>OFF</span> </div>
               <ul class="item-owner">
-                <li>Designer :<span> ABC Art</span></li>
-                <li>Brand:<span> LimeWood</span></li>
+                <li>Nhà tạo mẫu :<span> ABC Art</span></li>
+                <li>Hãng thời trang:<span> LimeWood</span></li>
               </ul>
               
               <!-- Item Detail -->
@@ -83,7 +83,7 @@
                   <!-- COLORS -->
                   <li class="col-xs-8">
                     <ul class="colors-shop">
-                      <li><span class="margin-right-20">Colors</span></li>
+                      <li><span class="margin-right-20">Màu</span></li>
                       <li><a href="#." style="background:#958170;"></a></li>
                       <li><a href="#." style="background:#c9a688;"></a></li>
                       <li><a href="#." style="background:#c9c288;"></a></li>
@@ -96,28 +96,14 @@
                   </li>
                   
                   <!-- ADD TO CART -->
-                  <li class="col-xs-6"> <a href="/ecommerce-php/views/page/cart.php?id=<?php echo $prod["sanpham_id"];?>" class="btn">ADD TO CART</a> </li>
+                  <li class="col-xs-6"> <a href="/ecommerce-php/views/page/cart.php?id=<?php echo $prod["sanpham_id"];?>" class="btn">Thêm vào giỏ</a> </li>
                   
                   <!-- LIKE -->
                   <li class="col-xs-6"> <a href="#." class="like-us"><i class="icon-heart"></i></a> </li>
                 </ul>
                 
-                <!-- INFOMATION -->
-                <div class="inner-info">
-                  <h6>DELIVERY INFORMATION</h6>
-                  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum finibus ligula a scelerisque gravida. Nullam laoreet tortor ac maximus alique met, consectetur adipiscing elit. </p>
-                  <h6>SHIPPING & RETURNS</h6>
-                  <h6>SHARE THIS PRODUCT</h6>
-                  
-                  <!-- Social Icons -->
-                  <ul class="social_icons">
-                    <li><a href="#."><i class="icon-social-facebook"></i></a></li>
-                    <li><a href="#."><i class="icon-social-twitter"></i></a></li>
-                    <li><a href="#."><i class="icon-social-tumblr"></i></a></li>
-                    <li><a href="#."><i class="icon-social-youtube"></i></a></li>
-                    <li><a href="#."><i class="icon-social-dribbble"></i></a></li>
-                  </ul>
-                </div>
+                
+                
               </div>
             </div>
           </div>
@@ -127,7 +113,7 @@
         <div class="item-decribe"> 
           <!-- Nav tabs -->
           <ul class="nav nav-tabs animate fadeInUp" data-wow-delay="0.4s" role="tablist">
-            <li role="presentation" class="active"><a href="#descr" role="tab" data-toggle="tab">DESCRIPTION</a></li>
+            <li role="presentation" class="active"><a href="#descr" role="tab" data-toggle="tab">Thông tin sản phẩm</a></li>
             <!-- <li role="presentation"><a href="#review" role="tab" data-toggle="tab">REVIEW (03)</a></li>
             <li role="presentation"><a href="#tags" role="tab" data-toggle="tab">INFORMATION</a></li> -->
           </ul>
@@ -138,27 +124,7 @@
             <div role="tabpanel" class="tab-pane fade in active" id="descr">
               <p><?php echo $prod["sanpham_mota"];?><br>
               </p>
-              <h6>THE SIMPLE FACTS</h6>
-              <ul>
-                <li>
-                  <p>Praesent faucibus, leo vitae maximus dictum,</p>
-                </li>
-                <li>
-                  <p> Donec porta ut lectus </p>
-                </li>
-                <li>
-                  <p> Phasellus maximus velit id nisl</p>
-                </li>
-                <li>
-                  <p> Quisque a tellus et sapien aliquam sus</p>
-                </li>
-                <li>
-                  <p> Donec porta ut lectus </p>
-                </li>
-                <li>
-                  <p> Phasellus maximus velit id nisl</p>
-                </li>
-              </ul>
+              
             </div>
             
           </div>
@@ -170,11 +136,7 @@
     <section class="light-gray-bg padding-top-150 padding-bottom-150">
       <div class="container"> 
         
-        <!-- Main Heading -->
-        <div class="heading text-center">
-          <h4>YOU MAY LIKE IT</h4>
-          <span>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec faucibus maximus vehicula. 
-          Sed feugiat, tellus vel tristique posuere, diam</span> </div>
+        
         
         <!-- Popular Item Slide -->
         <div class="papular-block block-slide"> 
@@ -219,9 +181,8 @@
         
         <!-- Main Heading -->
         <div class="heading text-center">
-          <h4>about PAVSHOP</h4>
-          <p>Phasellus lacinia fermentum bibendum. Interdum et malesuada fames ac ante ipsumien lacus, eu posuere odio luctus non. Nulla lacinia,
-            eros vel fermentum consectetur, risus purus tempc, et iaculis odio dolor in ex. </p>
+        <h4>Về LHB</h4>
+          <p>Sáng lập bởi 3 sinh viên Long Hưng Bằng</p>
         </div>
         
         <!-- Social Icons -->
@@ -235,18 +196,7 @@
       </div>
     </section>
     
-    <!-- News Letter -->
-    <section class="news-letter padding-top-150 padding-bottom-150">
-      <div class="container">
-        <div class="heading light-head text-center margin-bottom-30">
-          <h4>NEWSLETTER</h4>
-          <span>Phasellus lacinia fermentum bibendum. Interdum et malesuada fames ac ante ipsumien lacus, eu posuere odi </span> </div>
-        <form>
-          <input type="email" placeholder="Enter your email address" required>
-          <button type="submit">SEND ME</button>
-        </form>
-      </div>
-    </section>
+    
   </div>
 <?php
     include_once('../partials/footer.php');
