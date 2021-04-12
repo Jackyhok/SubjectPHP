@@ -109,7 +109,6 @@
             ?>
             
             <?php
-<<<<<<< HEAD
               if(!isset($_GET["cateID"])){
                 
                 $sql_product = mysqli_query($con,"SELECT * FROM tbl_sanpham WHERE sanpham_gia > 0 AND sanpham_gia < 500000 ORDER BY sanpham_id DESC");
@@ -121,9 +120,6 @@
                   
                   
               }
-=======
-                $sql_product = mysqli_query($con,"SELECT * FROM tbl_sanpham WHERE sanpham_gia > 0 AND sanpham_gia < 500000 ORDER BY sanpham_id DESC");
->>>>>>> e7975f2caa846539f43e94668d01a49521ce1bcb
                 while($row_sanpham = mysqli_fetch_array($sql_product)){ 
             ?>
               <!-- Item -->
@@ -153,7 +149,6 @@
             ?>
               
             <?php
-<<<<<<< HEAD
               if(!isset($_GET["cateID"])){
                 
                 $sql_product = mysqli_query($con,"SELECT * FROM tbl_sanpham WHERE sanpham_gia > 500000 AND sanpham_gia < 1000000 ORDER BY sanpham_id DESC");
@@ -165,9 +160,6 @@
                   
                   
               }
-=======
-                $sql_product = mysqli_query($con,"SELECT * FROM tbl_sanpham WHERE sanpham_gia > 500000 AND sanpham_gia < 1000000 ORDER BY sanpham_id DESC");
->>>>>>> e7975f2caa846539f43e94668d01a49521ce1bcb
                 while($row_sanpham = mysqli_fetch_array($sql_product)){ 
             ?>
               <!-- Item -->
@@ -197,7 +189,6 @@
             ?>
 
             <?php
-<<<<<<< HEAD
                  if(!isset($_GET["cateID"])){
                 
                   $sql_product = mysqli_query($con,"SELECT * FROM tbl_sanpham WHERE sanpham_gia > 1000000 AND sanpham_gia < 2000000 ORDER BY sanpham_id DESC");
@@ -210,9 +201,6 @@
                     
                 }
                 
-=======
-                $sql_product = mysqli_query($con,"SELECT * FROM tbl_sanpham WHERE sanpham_gia > 1000000 AND sanpham_gia < 2000000 ORDER BY sanpham_id DESC");
->>>>>>> e7975f2caa846539f43e94668d01a49521ce1bcb
                 while($row_sanpham = mysqli_fetch_array($sql_product)){ 
             ?>
               <!-- Item -->
