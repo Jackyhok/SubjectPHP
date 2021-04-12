@@ -65,9 +65,17 @@
             <!-- Popular Item Slide -->
             <div class="papular-block row listPro"> 
             <?php
-                
-                $sql_product = mysqli_query($con,"SELECT * FROM tbl_sanpham ORDER BY sanpham_id DESC LIMIT 10");
+                if(!isset($_GET["cateID"])){
+                  $sql_product = mysqli_query($con,"SELECT * FROM tbl_sanpham ORDER BY sanpham_id DESC LIMIT 10");
+                  
+                }
+                else{
+                    $cateid = $_GET["cateID"];
+                    $sql_product = mysqli_query($con,"SELECT * FROM tbl_sanpham WHERE category_id = $cateid ORDER BY sanpham_id DESC ");
+                    
+                }
                 while($row_sanpham = mysqli_fetch_array($sql_product)){ 
+                
             ?>
               <!-- Item -->
               <div class="col-md-4 allList">
@@ -101,7 +109,17 @@
             ?>
             
             <?php
+              if(!isset($_GET["cateID"])){
+                
                 $sql_product = mysqli_query($con,"SELECT * FROM tbl_sanpham WHERE sanpham_gia > 0 AND sanpham_gia < 500000 ORDER BY sanpham_id DESC");
+                
+              }
+              else{
+                  $cateid = $_GET["cateID"];
+                  $sql_product = mysqli_query($con,"SELECT * FROM tbl_sanpham WHERE sanpham_gia > 0 AND sanpham_gia < 500000 AND category_id = $cateid ORDER BY sanpham_id DESC");
+                  
+                  
+              }
                 while($row_sanpham = mysqli_fetch_array($sql_product)){ 
             ?>
               <!-- Item -->
@@ -131,7 +149,17 @@
             ?>
               
             <?php
+              if(!isset($_GET["cateID"])){
+                
                 $sql_product = mysqli_query($con,"SELECT * FROM tbl_sanpham WHERE sanpham_gia > 500000 AND sanpham_gia < 1000000 ORDER BY sanpham_id DESC");
+                
+              }
+              else{
+                  $cateid = $_GET["cateID"];
+                  $sql_product = mysqli_query($con,"SELECT * FROM tbl_sanpham WHERE sanpham_gia > 500000 AND sanpham_gia < 1000000 AND category_id = $cateid ORDER BY sanpham_id DESC");
+                  
+                  
+              }
                 while($row_sanpham = mysqli_fetch_array($sql_product)){ 
             ?>
               <!-- Item -->
@@ -161,7 +189,18 @@
             ?>
 
             <?php
-                $sql_product = mysqli_query($con,"SELECT * FROM tbl_sanpham WHERE sanpham_gia > 1000000 AND sanpham_gia < 2000000 ORDER BY sanpham_id DESC");
+                 if(!isset($_GET["cateID"])){
+                
+                  $sql_product = mysqli_query($con,"SELECT * FROM tbl_sanpham WHERE sanpham_gia > 1000000 AND sanpham_gia < 2000000 ORDER BY sanpham_id DESC");
+                  
+                }
+                else{
+                    $cateid = $_GET["cateID"];
+                    $sql_product = mysqli_query($con,"SELECT * FROM tbl_sanpham WHERE sanpham_gia > 1000000 AND sanpham_gia < 2000000 AND category_id = $cateid ORDER BY sanpham_id DESC");
+                    
+                    
+                }
+                
                 while($row_sanpham = mysqli_fetch_array($sql_product)){ 
             ?>
               <!-- Item -->
@@ -191,7 +230,17 @@
             ?>
              
              <?php
-                $sql_product = mysqli_query($con,"SELECT * FROM tbl_sanpham WHERE sanpham_gia > 2000000 ORDER BY sanpham_id DESC");
+             if(!isset($_GET["cateID"])){
+                
+              $sql_product = mysqli_query($con,"SELECT * FROM tbl_sanpham WHERE sanpham_gia > 2000000 ORDER BY sanpham_id DESC");
+              
+            }
+            else{
+                $cateid = $_GET["cateID"];
+                $sql_product = mysqli_query($con,"SELECT * FROM tbl_sanpham WHERE sanpham_gia > 2000000 AND category_id = $cateid ORDER BY sanpham_id DESC");
+                
+                
+            }
                 while($row_sanpham = mysqli_fetch_array($sql_product)){ 
             ?>
               <!-- Item -->
@@ -257,18 +306,7 @@
       </div>
     </section>
     
-    <!-- News Letter -->
-    <section class="news-letter padding-top-150 padding-bottom-150">
-      <div class="container">
-        <div class="heading light-head text-center margin-bottom-30">
-          <h4>NEWSLETTER</h4>
-          <span>Phasellus lacinia fermentum bibendum. Interdum et malesuada fames ac ante ipsumien lacus, eu posuere odi </span> </div>
-        <form>
-          <input type="email" placeholder="Enter your email address" required="">
-          <button type="submit">SEND ME</button>
-        </form>
-      </div>
-    </section>
+    
   </div>
 
 

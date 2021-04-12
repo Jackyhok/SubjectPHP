@@ -202,6 +202,7 @@
                             // $prod         = reset($product);
                             $total_money  += $item["quantity"] * $prod["sanpham_gia"];
                 ?>
+                 
                     <p><?php echo $prod["sanpham_name"];?><span><?php echo number_format ($totalPrice, 0, "", "."); ?> VND </span></p>
                 <?php
                         }
