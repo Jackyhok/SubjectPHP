@@ -56,14 +56,13 @@
             <!-- COntent -->
             <div class="col-md-5">
               <h4><?php echo $prod["sanpham_name"];?></h4>
-              <span class="price"><?php echo $prod["sanpham_gia"];?><small>VND</small></span> 
+              <span class="price"><?php echo number_format($prod["sanpham_gia"], 0 , "", "."); ?><small>VND</small></span> 
               
               <!-- Sale Tags -->
               <div class="on-sale"> <?php echo round(100 - $prod['sanpham_giakhuyenmai'] / $prod['sanpham_gia'] * 100)  ?>% <span>OFF</span> </div>
               <ul class="item-owner">
                 <li>Nhà tạo mẫu :<span> ABC Art</span></li>
                 <li>Hãng thời trang:<span> LimeWood</span></li>
-              </ul>
               
               <!-- Item Detail -->
               <p><?php echo $prod["sanpham_mota"];?></p>
