@@ -170,6 +170,7 @@
             <span class="price"><?php echo number_format($prodCate["sanpham_gia"], 0, '', '.');?><small>VND</small></span> 
             </div>
             <?php
+            
           }
           ?>
           
