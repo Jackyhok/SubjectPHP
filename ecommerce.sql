@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 5.0.4
+-- version 5.1.0
 -- https://www.phpmyadmin.net/
 --
--- Host: 127.0.0.1
--- Generation Time: Jan 21, 2021 at 11:43 AM
--- Server version: 10.4.17-MariaDB
--- PHP Version: 7.4.13
+-- Máy chủ: 127.0.0.1
+-- Thời gian đã tạo: Th4 12, 2021 lúc 10:56 AM
+-- Phiên bản máy phục vụ: 10.4.18-MariaDB
+-- Phiên bản PHP: 8.0.3
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -18,13 +18,13 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Database: `ecommerce`
+-- Cơ sở dữ liệu: `ecommerce`
 --
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `tbl_admin`
+-- Cấu trúc bảng cho bảng `tbl_admin`
 --
 
 CREATE TABLE `tbl_admin` (
@@ -35,16 +35,17 @@ CREATE TABLE `tbl_admin` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
--- Dumping data for table `tbl_admin`
+-- Đang đổ dữ liệu cho bảng `tbl_admin`
 --
 
 INSERT INTO `tbl_admin` (`admin_id`, `email`, `password`, `admin_name`) VALUES
-(1, 'admin@gmail.com', '21232f297a57a5a743894a0e4a801fc3', 'Hiếu Tấn');
+(1, 'admin@gmail.com', '21232f297a57a5a743894a0e4a801fc3', 'Hiếu Tấn'),
+(2, 'admin1@gmail.com', '21232f297a57a5a743894a0e4a801fc3', 'Long');
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `tbl_baiviet`
+-- Cấu trúc bảng cho bảng `tbl_baiviet`
 --
 
 CREATE TABLE `tbl_baiviet` (
@@ -57,7 +58,7 @@ CREATE TABLE `tbl_baiviet` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
--- Dumping data for table `tbl_baiviet`
+-- Đang đổ dữ liệu cho bảng `tbl_baiviet`
 --
 
 INSERT INTO `tbl_baiviet` (`baiviet_id`, `tenbaiviet`, `tomtat`, `noidung`, `danhmuctin_id`, `baiviet_image`) VALUES
@@ -70,7 +71,7 @@ INSERT INTO `tbl_baiviet` (`baiviet_id`, `tenbaiviet`, `tomtat`, `noidung`, `dan
 -- --------------------------------------------------------
 
 --
--- Table structure for table `tbl_category`
+-- Cấu trúc bảng cho bảng `tbl_category`
 --
 
 CREATE TABLE `tbl_category` (
@@ -79,18 +80,24 @@ CREATE TABLE `tbl_category` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
--- Dumping data for table `tbl_category`
+-- Đang đổ dữ liệu cho bảng `tbl_category`
 --
 
 INSERT INTO `tbl_category` (`category_id`, `category_name`) VALUES
-(16, 'Men'),
-(17, 'Woman'),
-(18, 'Kids');
+(19, 'Thời Trang Nam'),
+(20, 'Thời Trang Nữ'),
+(21, 'Điện Thoại'),
+(22, 'Máy Tính & Laptop'),
+(23, 'Đồng Hồ'),
+(24, 'Giày Nam'),
+(25, 'Giày Nữ'),
+(26, 'Đồ Chơi'),
+(27, 'Chăm Sóc Thú Cưng');
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `tbl_danhmuc_tin`
+-- Cấu trúc bảng cho bảng `tbl_danhmuc_tin`
 --
 
 CREATE TABLE `tbl_danhmuc_tin` (
@@ -99,7 +106,7 @@ CREATE TABLE `tbl_danhmuc_tin` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
--- Dumping data for table `tbl_danhmuc_tin`
+-- Đang đổ dữ liệu cho bảng `tbl_danhmuc_tin`
 --
 
 INSERT INTO `tbl_danhmuc_tin` (`danhmuctin_id`, `tendanhmuc`) VALUES
@@ -111,7 +118,7 @@ INSERT INTO `tbl_danhmuc_tin` (`danhmuctin_id`, `tendanhmuc`) VALUES
 -- --------------------------------------------------------
 
 --
--- Table structure for table `tbl_donhang`
+-- Cấu trúc bảng cho bảng `tbl_donhang`
 --
 
 CREATE TABLE `tbl_donhang` (
@@ -126,56 +133,21 @@ CREATE TABLE `tbl_donhang` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
--- Dumping data for table `tbl_donhang`
+-- Đang đổ dữ liệu cho bảng `tbl_donhang`
 --
 
 INSERT INTO `tbl_donhang` (`donhang_id`, `sanpham_id`, `soluong`, `mahang`, `khachhang_id`, `ngaythang`, `tinhtrang`, `huydon`) VALUES
-(10, 17, 7, '3060', 12, '2019-10-01 04:11:55', 1, 0),
-(11, 21, 5, '8979', 14, '2019-10-04 02:29:52', 0, 0),
-(12, 26, 6, '8979', 14, '2019-10-04 02:29:52', 0, 0),
-(13, 20, 3, '4236', 15, '2019-10-04 02:33:55', 0, 0),
-(14, 21, 4, '4236', 15, '2019-10-04 02:33:56', 0, 0),
-(15, 20, 3, '6503', 16, '2019-10-04 02:34:56', 0, 0),
-(16, 21, 4, '6503', 16, '2019-10-04 02:34:56', 0, 0),
-(17, 21, 1, '2508', 17, '2019-10-04 02:35:19', 0, 0),
-(18, 26, 3, '4249', 18, '2019-10-04 02:45:46', 0, 0),
-(19, 26, 3, '8728', 19, '2019-10-04 02:46:40', 0, 0),
-(20, 21, 1, '5037', 20, '2019-10-04 02:48:16', 0, 0),
-(21, 20, 1, '5037', 20, '2019-10-04 02:48:17', 0, 0),
-(22, 21, 1, '1594', 21, '2019-10-04 02:51:05', 0, 0),
-(23, 20, 1, '1594', 21, '2019-10-04 02:51:05', 0, 0),
-(24, 20, 1, '2323', 22, '2019-10-04 02:54:27', 0, 0),
-(25, 21, 3, '2323', 22, '2019-10-04 02:54:27', 0, 0),
-(26, 21, 2, '5737', 23, '2019-10-04 02:57:00', 0, 0),
-(28, 25, 3, '7785', 25, '2019-10-04 03:11:51', 0, 0),
-(29, 22, 5, '7785', 25, '2019-10-04 03:11:52', 0, 0),
-(30, 27, 2, '7785', 25, '2019-10-04 03:11:52', 0, 0),
-(31, 21, 1, '5396', 26, '2019-10-04 03:49:08', 0, 0),
-(32, 20, 3, '5396', 26, '2019-10-04 03:49:08', 0, 0),
-(33, 20, 3, '7914', 28, '2019-10-05 05:38:42', 0, 0),
-(34, 26, 1, '7914', 28, '2019-10-05 05:38:42', 0, 0),
-(35, 25, 2, '6687', 27, '2019-10-09 09:48:42', 1, 2),
-(36, 26, 3, '6687', 27, '2019-10-09 09:48:42', 1, 2),
-(37, 27, 1, '6687', 27, '2019-10-09 09:48:42', 1, 2),
-(38, 22, 1, '1125', 27, '2019-10-09 09:47:17', 1, 2),
-(39, 24, 1, '1125', 27, '2019-10-09 09:47:17', 1, 2),
-(40, 20, 1, '555', 27, '2019-10-09 09:50:07', 0, 2),
-(43, 21, 2, '', 25, '2021-01-16 08:30:30', 0, 0),
-(44, 21, 2, '', 25, '2021-01-16 08:30:45', 0, 0),
-(45, 21, 2, '', 25, '2021-01-16 08:38:08', 0, 0),
-(46, 21, 2, '', 25, '2021-01-16 08:38:09', 0, 0),
-(47, 21, 4, '', 25, '2021-01-16 09:23:43', 0, 0),
-(48, 27, 1, '', 25, '2021-01-16 09:23:43', 0, 0),
-(49, 21, 1, '', 25, '2021-01-18 04:13:18', 0, 0),
-(50, 28, 5, '', 29, '2021-01-19 11:37:06', 0, 0),
-(51, 28, 5, '', 25, '2021-01-19 12:22:54', 0, 0),
-(52, 21, 2, '', 25, '2021-01-19 12:22:54', 0, 0),
-(53, 19, 2, '', 25, '2021-01-19 12:22:54', 0, 0);
+(55, 39, 1, '', 31, '2021-04-12 08:31:46', 0, 0),
+(56, 39, 1, '', 31, '2021-04-12 08:50:55', 0, 0),
+(57, 39, 1, '', 31, '2021-04-12 08:53:10', 0, 0),
+(58, 35, 1, '', 31, '2021-04-12 08:53:10', 0, 0),
+(59, 42, 3, '', 31, '2021-04-12 08:53:10', 0, 0),
+(60, 37, 1, '', 31, '2021-04-12 08:53:10', 0, 0);
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `tbl_giaodich`
+-- Cấu trúc bảng cho bảng `tbl_giaodich`
 --
 
 CREATE TABLE `tbl_giaodich` (
@@ -190,7 +162,7 @@ CREATE TABLE `tbl_giaodich` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
--- Dumping data for table `tbl_giaodich`
+-- Đang đổ dữ liệu cho bảng `tbl_giaodich`
 --
 
 INSERT INTO `tbl_giaodich` (`giaodich_id`, `sanpham_id`, `soluong`, `magiaodich`, `ngaythang`, `khachhang_id`, `tinhtrangdon`, `huydon`) VALUES
@@ -213,7 +185,7 @@ INSERT INTO `tbl_giaodich` (`giaodich_id`, `sanpham_id`, `soluong`, `magiaodich`
 -- --------------------------------------------------------
 
 --
--- Table structure for table `tbl_giohang`
+-- Cấu trúc bảng cho bảng `tbl_giohang`
 --
 
 CREATE TABLE `tbl_giohang` (
@@ -226,7 +198,7 @@ CREATE TABLE `tbl_giohang` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
--- Dumping data for table `tbl_giohang`
+-- Đang đổ dữ liệu cho bảng `tbl_giohang`
 --
 
 INSERT INTO `tbl_giohang` (`giohang_id`, `tensanpham`, `sanpham_id`, `giasanpham`, `hinhanh`, `soluong`) VALUES
@@ -236,7 +208,7 @@ INSERT INTO `tbl_giohang` (`giohang_id`, `tensanpham`, `sanpham_id`, `giasanpham
 -- --------------------------------------------------------
 
 --
--- Table structure for table `tbl_khachhang`
+-- Cấu trúc bảng cho bảng `tbl_khachhang`
 --
 
 CREATE TABLE `tbl_khachhang` (
@@ -251,7 +223,7 @@ CREATE TABLE `tbl_khachhang` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
--- Dumping data for table `tbl_khachhang`
+-- Đang đổ dữ liệu cho bảng `tbl_khachhang`
 --
 
 INSERT INTO `tbl_khachhang` (`khachhang_id`, `name`, `phone`, `address`, `note`, `email`, `password`, `giaohang`) VALUES
@@ -266,12 +238,14 @@ INSERT INTO `tbl_khachhang` (`khachhang_id`, `name`, `phone`, `address`, `note`,
 (27, 'Trương Huệ Mẫn', '0932023992', '123', 'dasdasdasd', 'hueman@gmail.com', 'e10adc3949ba59abbe56e057f20f883e', 0),
 (28, 'Hoa', '0932023992', '123/123', 'dasdasdads', 'hoa@gmail.com', 'e10adc3949ba59abbe56e057f20f883e', 0),
 (29, 'Son', '1234', 'Tổ 2, Trà Thành, Thanh An', '', 'lephuocson1999@gmail.com', '202cb962ac59075b964b07152d234b70', 0),
-(30, 'Son', '1234', 'Tổ 2, Trà Thành, Thanh An', '', 'lephuocson19999@gmail.com', '202cb962ac59075b964b07152d234b70', 0);
+(30, 'Son', '1234', 'Tổ 2, Trà Thành, Thanh An', '', 'lephuocson19999@gmail.com', '202cb962ac59075b964b07152d234b70', 0),
+(31, 'okem', '11212121212121', 'adsadasd', '', 'ok@gmail.com', '202cb962ac59075b964b07152d234b70', 0),
+(32, 'asd', '23232', 'asd', '', 'ok@gmail.com', '202cb962ac59075b964b07152d234b70', 0);
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `tbl_sanpham`
+-- Cấu trúc bảng cho bảng `tbl_sanpham`
 --
 
 CREATE TABLE `tbl_sanpham` (
@@ -289,27 +263,24 @@ CREATE TABLE `tbl_sanpham` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
--- Dumping data for table `tbl_sanpham`
+-- Đang đổ dữ liệu cho bảng `tbl_sanpham`
 --
 
 INSERT INTO `tbl_sanpham` (`sanpham_id`, `category_id`, `sanpham_name`, `sanpham_chitiet`, `sanpham_mota`, `sanpham_gia`, `sanpham_giakhuyenmai`, `sanpham_active`, `sanpham_hot`, `sanpham_soluong`, `sanpham_image`) VALUES
-(17, 16, 'Giày K', 'dasdasdasadasd', 'dasdasddsadasds', 500000, 450000, 0, 1, 10, 'g.jpg'),
-(18, 16, 'Giày H', 'asdasd', 'dasdasd', 1000000, 800000, 0, 0, 1, 'g.jpg'),
-(19, 16, 'Giày J', 'asdasd', 'dasdasd', 1200000, 1100000, 0, 1, 1, 'g.jpg'),
-(20, 16, 'Giày A', 'dasdad', 'dasdas', 1700000, 1500000, 0, 0, 10, 'g.jpg'),
-(21, 16, 'Giày B', 'dasdad', 'dasdas', 1800000, 1600000, 0, 1, 10, 'g.jpg'),
-(22, 18, 'Giày Q', 'dasdad', 'dasdas', 1900000, 1820000, 0, 0, 5, 'g.jpg'),
-(23, 17, 'Giày L', 'dasdaddasda', 'dasdasdasd', 2100000, 2050000, 0, 1, 10, 'g.jpg'),
-(24, 17, 'Giày E', 'sfsdf', 'adsf', 600000, 500000, 0, 0, 10, 'g.jpg'),
-(25, 17, 'Giày D', 'sfsdf', 'adsf', 1300000, 1200000, 0, 0, 10, 'g.jpg'),
-(26, 17, 'Giày F', 'dasdas', 'dsadas', 2500000, 2200000, 0, 0, 10, 'g.jpg'),
-(27, 16, 'Giày G', 'dasdas', 'dsadas', 800000, 750000, 0, 0, 10, 'g.jpg'),
-(28, 17, 'Giày C', '123', '123', 1000000, 800000, 0, 0, 10, 'g.jpg');
+(34, 19, 'Áo Bomber', '❤️Freesize form từ 40kg -> 60kg ( Mặc đẹp từ 40kg - 55kg)\r\nĐợt này áo bomber không làm form rộng nữa mà sẽ là form hơi ôm 1 xíu nhé khách, vì nhiều khách thích mặc ôm ôm 1 xíu hơn ^^\r\n\r\nThương hiệu\r\nNo Brand\r\nChất liệu\r\nCotton\r\nDáng áo\r\nDáng rộng\r\nCách giặt\r\nGiặt tay\r\nXuất Xứ\r\nViệt Nam\r\nKho hàng\r\n68\r\nGửi từ\r\nQuận 12, TP. Hồ Chí Minh', 'Áo bomber ❤️Áo khoác nỉ khoá nút Cotton Boomber cao cấp 2 lớp', 330000, 300000, 0, 0, 25, 'bomberM.png'),
+(35, 20, 'Áo Bomber Nữ', '', 'Áo bomber ❤️ form Unisex nam nữ', 300000, 250000, 0, 0, 10, 'bomberW.png'),
+(36, 20, 'Chân Váy', '', 'CHÂN VÁY NGẮN XOÈ XẾP LY NỮ SINH NĂNG ĐỘNG', 600000, 600000, 0, 0, 25, 'Vay.png'),
+(37, 25, 'Giày Air', '', 'Giày Sneakers Nữ Phối Màu Trendy Năng Động', 1000000, 900000, 0, 0, 10, 'giaynu.png'),
+(38, 24, 'Boot Nam', '', 'Giày oxford da bóng', 1100000, 1050000, 0, 0, 25, 'bootnam.png'),
+(39, 23, 'Đồng hồ', '', 'Đồng hồ thông minh Xiaomi Haylou Solar', 2000000, 1900000, 0, 0, 15, 'dongho.png'),
+(40, 21, 'Realme', '', 'Realme - Điện thoại smartphone trả góp 0%', 7000000, 6700000, 0, 0, 1, 'dienthoai.png'),
+(41, 27, 'FoodDog', '', 'ngon yoyo', 1200000, 1180000, 0, 0, 15, 'food.png'),
+(42, 27, 'Chén Ăn cho thú cưng', '', '', 50000, 50000, 0, 0, 50, 'batcun.png');
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `tbl_slider`
+-- Cấu trúc bảng cho bảng `tbl_slider`
 --
 
 CREATE TABLE `tbl_slider` (
@@ -320,7 +291,7 @@ CREATE TABLE `tbl_slider` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
--- Dumping data for table `tbl_slider`
+-- Đang đổ dữ liệu cho bảng `tbl_slider`
 --
 
 INSERT INTO `tbl_slider` (`slider_id`, `slider_image`, `slider_caption`, `slider_active`) VALUES
@@ -328,129 +299,129 @@ INSERT INTO `tbl_slider` (`slider_id`, `slider_image`, `slider_caption`, `slider
 (2, 'b3.jpg', 'Slider 50%', 1);
 
 --
--- Indexes for dumped tables
+-- Chỉ mục cho các bảng đã đổ
 --
 
 --
--- Indexes for table `tbl_admin`
+-- Chỉ mục cho bảng `tbl_admin`
 --
 ALTER TABLE `tbl_admin`
   ADD PRIMARY KEY (`admin_id`);
 
 --
--- Indexes for table `tbl_baiviet`
+-- Chỉ mục cho bảng `tbl_baiviet`
 --
 ALTER TABLE `tbl_baiviet`
   ADD PRIMARY KEY (`baiviet_id`);
 
 --
--- Indexes for table `tbl_category`
+-- Chỉ mục cho bảng `tbl_category`
 --
 ALTER TABLE `tbl_category`
   ADD PRIMARY KEY (`category_id`);
 
 --
--- Indexes for table `tbl_danhmuc_tin`
+-- Chỉ mục cho bảng `tbl_danhmuc_tin`
 --
 ALTER TABLE `tbl_danhmuc_tin`
   ADD PRIMARY KEY (`danhmuctin_id`);
 
 --
--- Indexes for table `tbl_donhang`
+-- Chỉ mục cho bảng `tbl_donhang`
 --
 ALTER TABLE `tbl_donhang`
   ADD PRIMARY KEY (`donhang_id`);
 
 --
--- Indexes for table `tbl_giaodich`
+-- Chỉ mục cho bảng `tbl_giaodich`
 --
 ALTER TABLE `tbl_giaodich`
   ADD PRIMARY KEY (`giaodich_id`);
 
 --
--- Indexes for table `tbl_giohang`
+-- Chỉ mục cho bảng `tbl_giohang`
 --
 ALTER TABLE `tbl_giohang`
   ADD PRIMARY KEY (`giohang_id`);
 
 --
--- Indexes for table `tbl_khachhang`
+-- Chỉ mục cho bảng `tbl_khachhang`
 --
 ALTER TABLE `tbl_khachhang`
   ADD PRIMARY KEY (`khachhang_id`);
 
 --
--- Indexes for table `tbl_sanpham`
+-- Chỉ mục cho bảng `tbl_sanpham`
 --
 ALTER TABLE `tbl_sanpham`
   ADD PRIMARY KEY (`sanpham_id`);
 
 --
--- Indexes for table `tbl_slider`
+-- Chỉ mục cho bảng `tbl_slider`
 --
 ALTER TABLE `tbl_slider`
   ADD PRIMARY KEY (`slider_id`);
 
 --
--- AUTO_INCREMENT for dumped tables
+-- AUTO_INCREMENT cho các bảng đã đổ
 --
 
 --
--- AUTO_INCREMENT for table `tbl_admin`
+-- AUTO_INCREMENT cho bảng `tbl_admin`
 --
 ALTER TABLE `tbl_admin`
-  MODIFY `admin_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `admin_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
--- AUTO_INCREMENT for table `tbl_baiviet`
+-- AUTO_INCREMENT cho bảng `tbl_baiviet`
 --
 ALTER TABLE `tbl_baiviet`
   MODIFY `baiviet_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
--- AUTO_INCREMENT for table `tbl_category`
+-- AUTO_INCREMENT cho bảng `tbl_category`
 --
 ALTER TABLE `tbl_category`
-  MODIFY `category_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=19;
+  MODIFY `category_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=28;
 
 --
--- AUTO_INCREMENT for table `tbl_danhmuc_tin`
+-- AUTO_INCREMENT cho bảng `tbl_danhmuc_tin`
 --
 ALTER TABLE `tbl_danhmuc_tin`
   MODIFY `danhmuctin_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
--- AUTO_INCREMENT for table `tbl_donhang`
+-- AUTO_INCREMENT cho bảng `tbl_donhang`
 --
 ALTER TABLE `tbl_donhang`
-  MODIFY `donhang_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=55;
+  MODIFY `donhang_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=61;
 
 --
--- AUTO_INCREMENT for table `tbl_giaodich`
+-- AUTO_INCREMENT cho bảng `tbl_giaodich`
 --
 ALTER TABLE `tbl_giaodich`
   MODIFY `giaodich_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=18;
 
 --
--- AUTO_INCREMENT for table `tbl_giohang`
+-- AUTO_INCREMENT cho bảng `tbl_giohang`
 --
 ALTER TABLE `tbl_giohang`
   MODIFY `giohang_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
--- AUTO_INCREMENT for table `tbl_khachhang`
+-- AUTO_INCREMENT cho bảng `tbl_khachhang`
 --
 ALTER TABLE `tbl_khachhang`
-  MODIFY `khachhang_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=31;
+  MODIFY `khachhang_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=33;
 
 --
--- AUTO_INCREMENT for table `tbl_sanpham`
+-- AUTO_INCREMENT cho bảng `tbl_sanpham`
 --
 ALTER TABLE `tbl_sanpham`
-  MODIFY `sanpham_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=34;
+  MODIFY `sanpham_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=43;
 
 --
--- AUTO_INCREMENT for table `tbl_slider`
+-- AUTO_INCREMENT cho bảng `tbl_slider`
 --
 ALTER TABLE `tbl_slider`
   MODIFY `slider_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;

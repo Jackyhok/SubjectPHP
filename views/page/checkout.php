@@ -87,7 +87,7 @@
                                 // $prod         = reset($product);
                                 $total_money  += $item["quantity"] * $prod["sanpham_gia"];
                     ?>
-                    <p><?php echo $prod["sanpham_name"];?> (<?php echo $item["quantity"];?>) <span><?php echo $totalPrice; ?> VND </span></p>
+                    <p><?php echo $prod["sanpham_name"];?> (<?php echo $item["quantity"];?>) <span><?php echo number_format($totalPrice, 0 , "", "."); ?> VND </span></p>
                     <?php
                             }
                         }else{
@@ -96,7 +96,7 @@
                     ?>
                     
                     <!-- SUB TOTAL -->
-                    <p class="all-total">TỔNG TIỀN <span> <?php echo $total_money; ?> VND</span></p>
+                    <p class="all-total">TỔNG TIỀN <span> <?php echo number_format($total_money, 0 , "", "."); ?> VND</span></p>
                   </div>
                   <div class="pay-meth">
                     <ul>

@@ -111,7 +111,7 @@
             
             <!-- PRICE -->
             <li class="col-sm-2">
-              <div class="position-center-center"> <span class="price priceProduct"><?php echo $prod['sanpham_gia'] ?><small>VND</small> </span> </div>
+              <div class="position-center-center"> <span class="price priceProduct"><?php echo number_format($prod['sanpham_gia'], 0, '', '.')  ?><small>VND</small> </span> </div>
             </li>
             
             <!-- QTY -->
@@ -150,7 +150,7 @@
             
             <!-- TOTAL PRICE -->
             <li class="col-sm-2">
-              <div class="position-center-center"> <span class="price total"><?php echo $totalPrice; ?><small>VND</small></span> </div>
+              <div class="position-center-center"> <span class="price total"><?php echo number_format($totalPrice, 0, '', '.')  ?><small>VND</small></span> </div>
             </li>
             
             <!-- REMOVE -->
@@ -183,7 +183,7 @@
                 <input type="text" value="" placeholder="Nhập mã nếu bạn có">
                 <button type="submit" class="btn btn-small btn-dark">Áp dụng</button>
               </form>
-              <div class="coupn-btn"> <a href="#." class="btn">Tiếp tục mua hàng</a> <a href="#." class="btn">Cập nhật giỏ hàng </a> </div>
+              <div class="coupn-btn"> <a href="/ecommerce-php/views/page/shop.php" class="btn">Tiếp tục mua hàng</a> <a href="#." class="btn">Cập nhật giỏ hàng </a> </div>
             </div>
            
             <!-- SUB TOTAL -->
@@ -202,7 +202,7 @@
                             // $prod         = reset($product);
                             $total_money  += $item["quantity"] * $prod["sanpham_gia"];
                 ?>
-                    <p><?php echo $prod["sanpham_name"];?><span><?php echo $totalPrice; ?> VND </span></p>
+                    <p><?php echo $prod["sanpham_name"];?><span><?php echo number_format ($totalPrice, 0, "", "."); ?> VND </span></p>
                 <?php
                         }
                     }else{
@@ -210,7 +210,7 @@
                     }
                 ?>
                   <!-- SUB TOTAL -->
-                  <p class="all-total">TỔNG TIỀN <span> <?php echo $total_money; ?> VND</span></p>
+                  <p class="all-total">TỔNG TIỀN <span> <?php echo number_format ($total_money, 0, "", "."); ?> VND</span></p>
                 </div>
               </div>
             </div>
