@@ -10,7 +10,7 @@
         <p style="color:black">Cung cấp những mặt hàng chất lượng rẻ và đẹp</p>
         <ol class="breadcrumb">
             <li><a href="/ecommerce-php/views/page/index.php">Trang chủ</a></li>
-            <li class="active">Cửa hàng</li>
+            <li class="active"> <a href="../page/shop.php">Cửa hàng</a></li>
         </ol>
         </div>
     </div>

@@ -9,8 +9,8 @@
       <h4>Trang chi tiết sản phẩm</h4>
         <p>-----------------</p>
         <ol class="breadcrumb">
-          <li><a href="#">Trang chủ</a></li>
-          <li><a href="#">Cửa hàng</a></li>
+        <li><a href="../page/index.php">Trang chủ</a></li>
+        <li><a href="../page/shop.php">Cửa hàng</a></li>
           <li class="active">Trang chi tiết</li>
         </ol>
       </div>
@@ -112,7 +112,7 @@
         <div class="item-decribe"> 
           <!-- Nav tabs -->
           <ul class="nav nav-tabs animate fadeInUp" data-wow-delay="0.4s" role="tablist">
-            <li role="presentation" class="active"><a href="#descr" role="tab" data-toggle="tab">Thông tin sản phẩm</a></li>
+          <li role="presentation" class="active"><a href="#descr" role="tab" data-toggle="tab"><b>Thông tin sản phẩm</b></a></li>
             <!-- <li role="presentation"><a href="#review" role="tab" data-toggle="tab">REVIEW (03)</a></li>
             <li role="presentation"><a href="#tags" role="tab" data-toggle="tab">INFORMATION</a></li> -->
           </ul>

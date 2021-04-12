@@ -45,7 +45,7 @@
                 data-elementdelay="0.07" 
                 data-endelementdelay="0.1" 
                 data-endspeed="300" 
-                style="z-index: 6; font-size:78px; color:#fff; text-transform:uppercase; white-space: nowrap;">nhìn đẹp </div>
+                style="z-index: 6; font-size:78px; color:#fff; text-transform:uppercase; white-space: nowrap;">Đồ đẹp </div>
             <!-- LAYER NR. 2 -->
             <div class="tp-caption sfr font-extra-bold tp-resizeme letter-space-4" 
                 data-x="center" data-hoffset="0" 
@@ -58,7 +58,7 @@
                 data-elementdelay="0.07" 
                 data-endelementdelay="0.1" 
                 data-endspeed="300" 
-                style="z-index: 6; font-size:140px; color:#fff; text-transform:uppercase; white-space: nowrap;">mùa này </div>
+                style="z-index: 6; font-size:140px; color:#fff; text-transform:uppercase; white-space: nowrap;">đồng giá </div>
             <!-- LAYER NR. 4 -->
             <div class="tp-caption sfb font-extra-bold tp-resizeme" 
                 data-x="center" data-hoffset="120"
