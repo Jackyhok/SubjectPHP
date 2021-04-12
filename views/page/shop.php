@@ -10,7 +10,7 @@
         <p style="color:black">Cung cấp những mặt hàng chất lượng rẻ và đẹp</p>
         <ol class="breadcrumb">
             <li><a href="/ecommerce-php/views/page/index.php">Trang chủ</a></li>
-            <li class="active">Cửa hàng</li>
+            <li class="active"><a href="../page/shop.php" >Cửa hàng</a></li>
         </ol>
         </div>
     </div>
@@ -61,14 +61,22 @@
           
           <!-- Item Content -->
           <div class="col-sm-9">
-           
+          
             <!-- Popular Item Slide -->
             <div class="papular-block row listPro"> 
             <?php
-                
-                $sql_product = mysqli_query($con,"SELECT * FROM tbl_sanpham ORDER BY sanpham_id DESC LIMIT 10");
+                if(!isset($_GET["cateID"])){
+                  $sql_product = mysqli_query($con,"SELECT * FROM tbl_sanpham ORDER BY sanpham_id DESC LIMIT 10");
+                  
+                }
+                else{
+                    $cateid = $_GET["cateID"];
+                    $sql_product = mysqli_query($con,"SELECT * FROM tbl_sanpham WHERE category_id = $cateid ORDER BY sanpham_id DESC ");
+                    
+                }
                 while($row_sanpham = mysqli_fetch_array($sql_product)){ 
             ?>
+
               <!-- Item -->
               <div class="col-md-4 allList">
                 <div class="item"> 
@@ -101,14 +109,14 @@
             ?>
             
             <?php
-                $sql_product = mysqli_query($con,"SELECT * FROM tbl_sanpham WHERE sanpham_gia > 0 AND sanpham_gia < 500000 ORDER BY sanpham_id DESC");
+                $sql_product = mysqli_query($con,"SELECT * FROM tbl_sanpham WHERE sanpham_gia > 0 AND sanpham_gia <= 500000 ORDER BY sanpham_id DESC");
                 while($row_sanpham = mysqli_fetch_array($sql_product)){ 
             ?>
               <!-- Item -->
               <div class="col-md-4 priceOld" style="display:none;">
                 <div class="item"> 
                   <!-- Sale Tags -->
-                  <div class="on-sale"> 10% <span>OFF</span> </div>
+                  <div class="on-sale"> <?php echo round(100 - $row_sanpham['sanpham_giakhuyenmai'] / $row_sanpham['sanpham_gia'] * 100)  ?>% <span>OFF</span> </div>
                   
                   <!-- Item img -->
                   <div class="item-img"> <img class="img-1" src="../../img/<?php echo $row_sanpham['sanpham_image'] ?>" alt=""> <img class="img-2" src="../../img/<?php echo $row_sanpham['sanpham_image'] ?>" alt=""> 
@@ -120,7 +128,7 @@
                     </div>
                   </div>
                   <!-- Item Name -->
-                  <div class="item-name"> <a href="/ecommerce-php/views/page/product-detail.php?id=<?php echo $row_sanpham["sanpham_id"];?>&cateID=<?php echo $row_sanpham["category_id"];?>"><?php echo $row_sanpham['sanpham_name'] ?></a>
+                  <div class="item-name"> <a href="/ecommerce-php/views/page/product-detail.php?id=<?php echo $row_sanpham["sanpham_id"];?>&cateID=<?php echo $row_sanpham["category_id"];?>"> <?php echo $row_sanpham['sanpham_name'] ?></a>
                     <p><?php echo $row_sanpham['sanpham_mota'] ?></p>
                   </div>
                   <!-- Price --> 
@@ -130,15 +138,17 @@
                 } 
             ?>
               
+
+
             <?php
-                $sql_product = mysqli_query($con,"SELECT * FROM tbl_sanpham WHERE sanpham_gia > 500000 AND sanpham_gia < 1000000 ORDER BY sanpham_id DESC");
+                $sql_product = mysqli_query($con,"SELECT * FROM tbl_sanpham WHERE sanpham_gia >= 500000 AND sanpham_gia <= 1000000 ORDER BY sanpham_id DESC");
                 while($row_sanpham = mysqli_fetch_array($sql_product)){ 
             ?>
               <!-- Item -->
               <div class="col-md-4 priceBth" style="display:none;">
                 <div class="item"> 
                   <!-- Sale Tags -->
-                  <div class="on-sale"> 10% <span>OFF</span> </div>
+                  <div class="on-sale"> <?php echo round(100 - $row_sanpham['sanpham_giakhuyenmai'] / $row_sanpham['sanpham_gia'] * 100)  ?>%  <span>OFF</span> </div>
                   
                   <!-- Item img -->
                   <div class="item-img"> <img class="img-1" src="../../img/<?php echo $row_sanpham['sanpham_image'] ?>" alt=""> <img class="img-2" src="../../img/<?php echo $row_sanpham['sanpham_image'] ?>" alt=""> 
@@ -161,14 +171,14 @@
             ?>
 
             <?php
-                $sql_product = mysqli_query($con,"SELECT * FROM tbl_sanpham WHERE sanpham_gia > 1000000 AND sanpham_gia < 2000000 ORDER BY sanpham_id DESC");
+                $sql_product = mysqli_query($con,"SELECT * FROM tbl_sanpham WHERE sanpham_gia >= 1000000 AND sanpham_gia <= 2000000 ORDER BY sanpham_id DESC");
                 while($row_sanpham = mysqli_fetch_array($sql_product)){ 
             ?>
               <!-- Item -->
               <div class="col-md-4 priceKha" style="display:none;">
                 <div class="item"> 
                   <!-- Sale Tags -->
-                  <div class="on-sale"> 10% <span>OFF</span> </div>
+                  <div class="on-sale"> <?php echo round(100 - $row_sanpham['sanpham_giakhuyenmai'] / $row_sanpham['sanpham_gia'] * 100)  ?>%  <span>OFF</span> </div>
                   
                   <!-- Item img -->
                   <div class="item-img"> <img class="img-1" src="../../img/<?php echo $row_sanpham['sanpham_image'] ?>" alt=""> <img class="img-2" src="../../img/<?php echo $row_sanpham['sanpham_image'] ?>" alt=""> 
@@ -191,14 +201,14 @@
             ?>
              
              <?php
-                $sql_product = mysqli_query($con,"SELECT * FROM tbl_sanpham WHERE sanpham_gia > 2000000 ORDER BY sanpham_id DESC");
+                $sql_product = mysqli_query($con,"SELECT * FROM tbl_sanpham WHERE sanpham_gia >= 2000000 ORDER BY sanpham_id DESC");
                 while($row_sanpham = mysqli_fetch_array($sql_product)){ 
             ?>
               <!-- Item -->
               <div class="col-md-4 priceCao" style="display:none;">
                 <div class="item"> 
                   <!-- Sale Tags -->
-                  <div class="on-sale"> 10% <span>OFF</span> </div>
+                  <div class="on-sale"> <?php echo round(100 - $row_sanpham['sanpham_giakhuyenmai'] / $row_sanpham['sanpham_gia'] * 100)  ?>%  <span>OFF</span> </div>
                   
                   <!-- Item img -->
                   <div class="item-img"> <img class="img-1" src="../../img/<?php echo $row_sanpham['sanpham_image'] ?>" alt=""> <img class="img-2" src="../../img/<?php echo $row_sanpham['sanpham_image'] ?>" alt=""> 
@@ -283,6 +293,7 @@
         // $(this).attr("checked", true);
         // $('input[name=filerPrice]:checked').attr("checked", false)
         // }
+        
         let value = $(this).val();
         let from;
         let to;

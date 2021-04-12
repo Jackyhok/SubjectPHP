@@ -9,8 +9,8 @@
       <h4>Trang chi tiết sản phẩm</h4>
         <p>-----------------</p>
         <ol class="breadcrumb">
-          <li><a href="#">Trang chủ</a></li>
-          <li><a href="#">Cửa hàng</a></li>
+          <li><a href="../page/index.php">Trang chủ</a></li>
+          <li><a href="../page/shop.php">Cửa hàng</a></li>
           <li class="active">Trang chi tiết</li>
         </ol>
       </div>
@@ -27,7 +27,7 @@
         $product      = mysqli_query($con,"SELECT * FROM tbl_sanpham WHERE sanpham_id= '$id' ");
         $prod         = mysqli_fetch_array($product);
 
-        $productOfCate      = mysqli_query($con,"SELECT * FROM tbl_sanpham WHERE sanpham_id != '$id' AND category_id='$cateID' ");
+        $productOfCate   = mysqli_query($con,"SELECT * FROM tbl_sanpham WHERE sanpham_id != '$id' AND category_id='$cateID' ");
         // $prodCate           = mysqli_fetch_array($productOfCate);
 
     ?>
@@ -56,7 +56,7 @@
             <!-- COntent -->
             <div class="col-md-5">
               <h4><?php echo $prod["sanpham_name"];?></h4>
-              <span class="price"><?php echo $prod["sanpham_gia"];?><small>VND</small></span> 
+              <span class="price"><?php echo number_format($prod["sanpham_gia"], 0, '', '.');?><small>VND</small></span> 
               
               <!-- Sale Tags -->
               <div class="on-sale"> <?php echo round(100 - $prod['sanpham_giakhuyenmai'] / $prod['sanpham_gia'] * 100)  ?>% <span>OFF</span> </div>
@@ -113,7 +113,7 @@
         <div class="item-decribe"> 
           <!-- Nav tabs -->
           <ul class="nav nav-tabs animate fadeInUp" data-wow-delay="0.4s" role="tablist">
-            <li role="presentation" class="active"><a href="#descr" role="tab" data-toggle="tab">Thông tin sản phẩm</a></li>
+            <li role="presentation" class="active"><a href="#descr" role="tab" data-toggle="tab"><b>Thông tin sản phẩm</b></a></li>
             <!-- <li role="presentation"><a href="#review" role="tab" data-toggle="tab">REVIEW (03)</a></li>
             <li role="presentation"><a href="#tags" role="tab" data-toggle="tab">INFORMATION</a></li> -->
           </ul>
@@ -137,17 +137,21 @@
       <div class="container"> 
         
         
-        
+        <h4>Sản Phẩm Liên Quan</h4>
         <!-- Popular Item Slide -->
         <div class="papular-block block-slide"> 
           
           <!-- Item -->
           <?php 
            while($prodCate = mysqli_fetch_array($productOfCate)){ 
-            ?>
+          ?>
 
            
           <div class="item"> 
+
+            <!-- Sale Tags -->
+            <div class="on-sale"> <?php echo round(100 - $prodCate['sanpham_giakhuyenmai'] / $prodCate['sanpham_gia'] * 100)  ?>% <span>OFF</span> </div>
+          
             <!-- Item img -->
             <div class="item-img"> <img class="img-1" src="../../img/<?php echo $prodCate["sanpham_image"];?>" alt="" > 
               <img class="img-2" src="../../img/<?php echo $prodCate["sanpham_image"];?>" alt="" > 
@@ -163,7 +167,7 @@
               <p><?php echo $prodCate["sanpham_mota"];?></p>
             </div>
             <!-- Price --> 
-            <span class="price"><?php echo $prodCate["sanpham_gia"];?><small>VND</small></span> 
+            <span class="price"><?php echo number_format($prodCate["sanpham_gia"], 0, '', '.');?><small>VND</small></span> 
             </div>
             <?php
           }

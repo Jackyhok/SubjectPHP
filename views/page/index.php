@@ -45,7 +45,7 @@
                 data-elementdelay="0.07" 
                 data-endelementdelay="0.1" 
                 data-endspeed="300" 
-                style="z-index: 6; font-size:78px; color:#fff; text-transform:uppercase; white-space: nowrap;">nhìn đẹp </div>
+                style="z-index: 6; font-size:78px; color:#fff; text-transform:uppercase; white-space: nowrap;">Giảm sốc</div>
             <!-- LAYER NR. 2 -->
             <div class="tp-caption sfr font-extra-bold tp-resizeme letter-space-4" 
                 data-x="center" data-hoffset="0" 
