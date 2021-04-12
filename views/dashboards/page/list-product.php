@@ -157,8 +157,8 @@
 <div class="col-lg-12 stretch-card">
     <div class="card">
         <div class="card-body">
-        <h4 class="card-title">Table with contextual classes</h4>
-        <p class="card-description"> Add class <code>.table-{color}</code> </p>
+        <h4 class="card-title">Danh sách sản phẩm</h4>
+        <!-- <p class="card-description"> Add class <code>.table-{color}</code> </p> -->
         <table class="table table-success">
             <thead>
             <tr>

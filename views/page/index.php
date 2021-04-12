@@ -120,7 +120,7 @@
           <!-- Overlay  -->
           <div class="overlay"> 
             <!-- Price --> 
-            <span class="price"><?php echo $row_sanpham['sanpham_gia'] ?><small>VND</small></span>
+            <span class="price"><?php echo number_format($row_sanpham['sanpham_gia'], 0, '', '.')  ?><small>VND</small></span>
             <div class="position-center-center"> <a href="../../img/<?php echo $row_sanpham['sanpham_image'] ?>" data-lighter><i class="icon-magnifier"></i></a> </div>
           </div>
           <!-- Item Name -->
@@ -193,7 +193,7 @@
               <p><?php echo $row_sanpham['sanpham_mota'] ?></p>
             </div>
             <!-- Price --> 
-            <span class="price"><?php echo $row_sanpham['sanpham_gia'] ?><small>VND</small> </div>
+            <span class="price"><?php echo number_format($row_sanpham['sanpham_gia'], 0, '', '.') ?><small>VND</small> </div>
         <?php
           } 
         ?>
