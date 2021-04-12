@@ -162,7 +162,7 @@
               <p><?php echo $prodCate["sanpham_mota"];?></p>
             </div>
             <!-- Price --> 
-            <span class="price"><?php echo $prodCate["sanpham_gia"];?><small>VND</small></span> 
+            <span class="price"><?php echo number_format($prodCate["sanpham_gia"], 0, '', '.');?><small>VND</small></span> 
             </div>
             <?php
           }
