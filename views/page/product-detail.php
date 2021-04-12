@@ -9,8 +9,8 @@
       <h4>Trang chi tiết sản phẩm</h4>
         <p>-----------------</p>
         <ol class="breadcrumb">
-          <li><a href="#">Trang chủ</a></li>
-          <li><a href="#">Cửa hàng</a></li>
+          <li><a href="../page/index.php">Trang chủ</a></li>
+          <li><a href="../page/shop.php">Cửa hàng</a></li>
           <li class="active">Trang chi tiết</li>
         </ol>
       </div>
